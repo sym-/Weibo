@@ -17,15 +17,19 @@ extension UIButton{
         return btn
     }
     
-    class func ym_textBtn(title: String, fontSize: CGFloat, normalColor: UIColor, highlightedColor: UIColor) -> UIButton{
+    class func ym_textBtn(title: String, fontSize: CGFloat, normalColor: UIColor, highlightedColor: UIColor, backgoundImageName: String = "") -> UIButton{
         let btn = UIButton(type: .custom)
         
         btn.setTitle(title, for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
         btn.setTitleColor(normalColor, for: .normal)
         btn.setTitleColor(highlightedColor, for: .highlighted)
+        if backgoundImageName != "" {
+            btn.setBackgroundImage(UIImage(named: backgoundImageName), for: .normal)
+        }
         btn.sizeToFit()
         
         return btn
     }
+    
 }

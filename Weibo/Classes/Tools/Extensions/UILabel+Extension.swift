@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+extension UILabel{
+    class func ym_label(withText: String, fontSize: CGFloat = 14, textColor: UIColor) -> UILabel{
+        let label = UILabel()
+        label.text = withText
+        label.font = UIFont.systemFont(ofSize: fontSize)
+        label.textColor = textColor
+        
+        return label
+    }
+}

@@ -21,6 +21,14 @@ class WBMainViewController: UITabBarController {
         //撰写微博
         
     }
+    
+    override var shouldAutorotate: Bool{
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+        return .portrait
+    }
 
     fileprivate lazy var composeBtn: UIButton = UIButton.ym_imageBtn(imageName: "tabbar_compose_icon_add", backgroungImageName: "tabbar_compose_button")
 }

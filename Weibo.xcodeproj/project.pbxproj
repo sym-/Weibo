@@ -118,6 +118,8 @@
 		1FCA453E1DD4C67100F65575 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FCA453D1DD4C67100F65575 /* WebP.framework */; };
 		1FEFC9EE1DDB1CEB00A18272 /* WBDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFC9ED1DDB1CEB00A18272 /* WBDemoViewController.swift */; };
 		1FEFC9F01DDC408100A18272 /* UIBarButtonItem+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFC9EF1DDC408100A18272 /* UIBarButtonItem+Extension.swift */; };
+		1FEFC9F51DDDBD2600A18272 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFC9F41DDDBD2600A18272 /* WBVisitorView.swift */; };
+		1FEFC9F71DDDC2F900A18272 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEFC9F61DDDC2F900A18272 /* UILabel+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +321,8 @@
 		1FCA453D1DD4C67100F65575 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
 		1FEFC9ED1DDB1CEB00A18272 /* WBDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBDemoViewController.swift; sourceTree = "<group>"; };
 		1FEFC9EF1DDC408100A18272 /* UIBarButtonItem+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extension.swift"; sourceTree = "<group>"; };
+		1FEFC9F41DDDBD2600A18272 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WBVisitorView.swift; path = ../WBVisitorView.swift; sourceTree = "<group>"; };
+		1FEFC9F61DDDC2F900A18272 /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -359,6 +363,7 @@
 				1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */,
 				1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */,
 				1FEFC9EF1DDC408100A18272 /* UIBarButtonItem+Extension.swift */,
+				1FEFC9F61DDDC2F900A18272 /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,9 +458,9 @@
 		1FCA440D1DD4BF2700F65575 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				1FEFC9F31DDDBD1000A18272 /* VisitorView */,
 				1FEFC9EC1DDB1B3C00A18272 /* Demo */,
-				1FCA44111DD4BF7A00F65575 /* WBMainViewController.swift */,
-				1FCA44131DD4BFAE00F65575 /* WBNavigationController.swift */,
+				1FEFC9F21DDD991900A18272 /* 主控制器 */,
 				1FCA44151DD4BFCE00F65575 /* WBBaseViewController.swift */,
 			);
 			path = Main;
@@ -782,6 +787,23 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
+		1FEFC9F21DDD991900A18272 /* 主控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA44111DD4BF7A00F65575 /* WBMainViewController.swift */,
+				1FCA44131DD4BFAE00F65575 /* WBNavigationController.swift */,
+			);
+			name = "主控制器";
+			sourceTree = "<group>";
+		};
+		1FEFC9F31DDDBD1000A18272 /* VisitorView */ = {
+			isa = PBXGroup;
+			children = (
+				1FEFC9F41DDDBD2600A18272 /* WBVisitorView.swift */,
+			);
+			path = VisitorView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -879,6 +901,7 @@
 				1FEFC9EE1DDB1CEB00A18272 /* WBDemoViewController.swift in Sources */,
 				1FCA44DC1DD4C3B200F65575 /* NSThread+YYAdd.m in Sources */,
 				1FCA44ED1DD4C3B200F65575 /* UIView+YYAdd.m in Sources */,
+				1FEFC9F51DDDBD2600A18272 /* WBVisitorView.swift in Sources */,
 				1FCA44E91DD4C3B200F65575 /* UIScreen+YYAdd.m in Sources */,
 				1FCA44EC1DD4C3B200F65575 /* UITextField+YYAdd.m in Sources */,
 				1FCA44121DD4BF7A00F65575 /* WBMainViewController.swift in Sources */,
@@ -910,6 +933,7 @@
 				1FCA450E1DD4C3B300F65575 /* YYTextAttribute.m in Sources */,
 				1FCA44F01DD4C3B200F65575 /* YYKVStorage.m in Sources */,
 				1FCA45021DD4C3B300F65575 /* YYTextDebugOption.m in Sources */,
+				1FEFC9F71DDDC2F900A18272 /* UILabel+Extension.swift in Sources */,
 				1FCA44FD1DD4C3B300F65575 /* YYWebImageManager.m in Sources */,
 				1FCA45031DD4C3B300F65575 /* YYTextEffectWindow.m in Sources */,
 				1FCA44E71DD4C3B200F65575 /* UIGestureRecognizer+YYAdd.m in Sources */,
