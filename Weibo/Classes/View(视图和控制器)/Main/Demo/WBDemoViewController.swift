@@ -24,8 +24,9 @@ class WBDemoViewController: WBBaseViewController {
 }
 
 extension WBDemoViewController{
-    override func setupUI() {
-        super.setupUI()
+    
+    override func setupTableView() {
+        super.setupTableView()
         
         navItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", fontSize: 16, target: self, action: #selector(showNext))
     }

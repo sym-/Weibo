@@ -57,8 +57,8 @@ class WBHomeViewController: WBBaseViewController {
 
 //设置界面
 extension WBHomeViewController{
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView()  {
+        super.setupTableView()
         
         //导航
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFriends))

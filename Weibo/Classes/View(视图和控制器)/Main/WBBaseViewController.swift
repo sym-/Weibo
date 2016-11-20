@@ -22,6 +22,8 @@ class WBBaseViewController: UIViewController {
     
     var userLogon = false
     
+    var visitorInfo: [String: String]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +43,20 @@ class WBBaseViewController: UIViewController {
     }
 }
 
+//访客视图监听方法
 extension WBBaseViewController{
-    func setupUI(){
+    @objc fileprivate func login(){
+        
+    }
+    
+    @objc fileprivate func register(){
+        
+    }
+}
+
+//设置界面
+extension WBBaseViewController{
+    fileprivate func setupUI(){
         view.backgroundColor = UIColor.white
         
         automaticallyAdjustsScrollViewInsets = false
@@ -52,7 +66,7 @@ extension WBBaseViewController{
         
     }
     
-    private func setupTableView(){
+    func setupTableView(){
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
         tableView?.dataSource = self
@@ -66,8 +80,15 @@ extension WBBaseViewController{
     
     private func setupVisitorView(){
         let visitorView = WBVisitorView(frame: view.bounds)
+        visitorView.visitorInfo = visitorInfo
+        visitorView.logonButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        visitorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
         view.insertSubview(visitorView, belowSubview: navigationBar)
+    
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     private func setupNavigationBar(){
@@ -76,6 +97,7 @@ extension WBBaseViewController{
         navigationBar.items = [navItem]
         navigationBar.barTintColor = UIColor(hexString: "0xf6f6f6")
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.darkGray]
+        navigationBar.tintColor = UIColor.orange
     }
 }
 

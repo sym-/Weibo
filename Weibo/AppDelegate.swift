@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = WBMainViewController()
         window?.makeKeyAndVisible()
         
+        loadAppInfo()
+        
         return true
     }
 
@@ -47,5 +49,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate{
+    fileprivate func loadAppInfo(){
+        DispatchQueue.global().async {
+            let url = Bundle.main.path(forResource: "main.json", ofType: nil)
+            let data = NSData(contentsOfFile: url!)
+            
+            let docDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+            let jsonPath = (docDir as NSString).appendingPathComponent("main.json")
+            
+            data?.write(toFile: jsonPath, atomically: true)
+        }
+    }
 }
 
