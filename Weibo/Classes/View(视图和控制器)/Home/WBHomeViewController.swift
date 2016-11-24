@@ -12,7 +12,7 @@ private let CellId = "CellId"
 
 class WBHomeViewController: WBBaseViewController {
 
-    fileprivate lazy var statusList = [String]()
+    fileprivate lazy var listViewModel = WBStatusListViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,30 +28,13 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadData() {
-        if statusList.count != 0 {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){
-                if self.isPullup{
-                    for i in 0..<20{
-                        self.statusList.append(i.description)
-                    }
-                }
-                else{
-                    for i in 0..<20{
-                        self.statusList.insert(i.description, at: 0)
-                    }
-                }
-                
-                self.isPullup = false
-                self.refreshControl?.endRefreshing()
+        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+            self.isPullup = false
+            self.refreshControl?.endRefreshing()
+            if shouldRefresh{
                 self.tableView?.reloadData()
             }
         }
-        else{
-            for i in 0..<20{
-                self.statusList.insert(i.description, at: 0)
-            }
-        }
-        
     }
 }
 
@@ -71,13 +54,13 @@ extension WBHomeViewController{
 //表格数据源方法
 extension WBHomeViewController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath)
         
-        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         
         return cell
     }

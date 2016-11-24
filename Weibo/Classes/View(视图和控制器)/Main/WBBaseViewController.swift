@@ -20,8 +20,6 @@ class WBBaseViewController: UIViewController {
     
     var isPullup = false
     
-    var userLogon = false
-    
     var visitorInfo: [String: String]?
     
     
@@ -29,7 +27,7 @@ class WBBaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
-        loadData()
+        WBNetworkManager.shared.userLogon ? loadData() : ()
     }
 
     override var title: String?{
@@ -46,7 +44,7 @@ class WBBaseViewController: UIViewController {
 //访客视图监听方法
 extension WBBaseViewController{
     @objc fileprivate func login(){
-        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
     
     @objc fileprivate func register(){
@@ -62,7 +60,7 @@ extension WBBaseViewController{
         automaticallyAdjustsScrollViewInsets = false
         setupNavigationBar()
         
-        userLogon ? setupTableView() : setupVisitorView()
+        WBNetworkManager.shared.userLogon ? setupTableView() : setupVisitorView()
         
     }
     

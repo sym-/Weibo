@@ -9,17 +9,35 @@
 import UIKit
 
 class WBMainViewController: UITabBarController {
+    
+    fileprivate var timer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupChildControllers()
         setupComposeBtn()
+        setupTimer()
+        delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
+    }
+    
+    deinit {
+        timer?.invalidate()
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc fileprivate func composeStatus() {
         //撰写微博
         
+    }
+    
+    @objc fileprivate func userLogin(){
+        let vc = WBOAuthViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        
+        present(nav, animated: true, completion: nil)
     }
     
     override var shouldAutorotate: Bool{
@@ -33,12 +51,57 @@ class WBMainViewController: UITabBarController {
     fileprivate lazy var composeBtn: UIButton = UIButton.ym_imageBtn(imageName: "tabbar_compose_icon_add", backgroungImageName: "tabbar_compose_button")
 }
 
+//TabbarController代理
+extension WBMainViewController: UITabBarControllerDelegate{
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        let index = childViewControllers.index(of: viewController)
+
+        if selectedIndex == 0 && index == selectedIndex {
+            let nav = viewController as! UINavigationController
+            let vc = nav.childViewControllers.first as! WBHomeViewController
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -vc.navigationBar.height), animated: true)
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
+                vc.loadData()
+            })
+        }
+        
+        return !viewController.isMember(of: UIViewController.self)
+    }
+}
+
+//定时器
+extension WBMainViewController{
+    fileprivate func setupTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    @objc fileprivate func updateTimer(){
+        if !WBNetworkManager.shared.userLogon {
+            return
+        }
+        
+        WBNetworkManager.shared.unreadCount { (count) in
+            print("有\(count)条新微博")
+            
+            if count > 0 {
+                self.tabBar.items?.first?.badgeValue = String(count)
+                UIApplication.shared.applicationIconBadgeNumber = count
+            }
+            else{
+                self.tabBar.items?.first?.badgeValue = nil
+                UIApplication.shared.applicationIconBadgeNumber = 0
+            }
+        }
+    }
+}
+
+//UI配置
 extension WBMainViewController{
     
     fileprivate func setupComposeBtn(){
         tabBar.addSubview(composeBtn)
         let count: CGFloat = CGFloat(childViewControllers.count)
-        let width  = tabBar.bounds.size.width/count - 1
+        let width  = tabBar.bounds.size.width/count
         composeBtn.frame = tabBar.bounds.insetBy(dx: 2 * width, dy: 0)
         composeBtn.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
     }
