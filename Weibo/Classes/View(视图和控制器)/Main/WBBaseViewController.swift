@@ -22,12 +22,17 @@ class WBBaseViewController: UIViewController {
     
     var visitorInfo: [String: String]?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
         WBNetworkManager.shared.userLogon ? loadData() : ()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: NSNotification.Name(rawValue: WBUserLoginSuccessNotification), object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override var title: String?{
@@ -43,6 +48,17 @@ class WBBaseViewController: UIViewController {
 
 //访客视图监听方法
 extension WBBaseViewController{
+    @objc fileprivate func loginSuccess(noti: Notification){
+        //更新UI
+        //tips:当view==nil时，会调用loadView -> viewDidLoad
+        view = nil
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     @objc fileprivate func login(){
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
     }
@@ -70,6 +86,9 @@ extension WBBaseViewController{
         tableView?.dataSource = self
         tableView?.delegate = self
         tableView?.contentInset = UIEdgeInsetsMake(navigationBar.bounds.height, 0, tabBarController?.tabBar.height ?? 49, 0)
+        
+        //修改滚动条位置
+        tableView?.scrollIndicatorInsets = tableView?.contentInset ?? UIEdgeInsets.zero
         
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl!)

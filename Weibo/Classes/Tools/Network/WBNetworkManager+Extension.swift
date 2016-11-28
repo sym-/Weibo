@@ -33,9 +33,9 @@ extension WBNetworkManager{
         }
     }
     
-    
+    //微博未读数量
     func unreadCount(completion: @escaping (_ count: Int)->()) {
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         
@@ -50,5 +50,54 @@ extension WBNetworkManager{
             
             completion(count ?? 0)
         }
+    }
+    
+    
+    
+}
+
+//获取用户信息
+extension WBNetworkManager{
+    func loadUserInfo(completion: @escaping (_ dict: [String: AnyObject])->()) {
+        let urlStr = "https://api.weibo.com/2/users/show.json"
+        
+        guard let uid = userAccount.uid else {
+            return
+        }
+        
+        let params = ["uid": uid]
+        
+        tokenRequest(urlString: urlStr, parameters: params){(json, isSuccess) in
+            completion(json as? [String: AnyObject] ?? [:])
+        }
+    }
+}
+
+//OAuth相关方法
+extension WBNetworkManager{
+    func loadAccessToken(code: String, completion: @escaping (_ isSuccess: Bool)->()) -> () {
+        let urlStr = "https://api.weibo.com/oauth2/access_token"
+        let params = ["client_id": WBAppKey,
+                      "client_secret": WBAppSecret,
+                      "grant_type": "authorization_code",
+                      "code": code,
+                      "redirect_uri": WBRedirectURI];
+        request(method: .POST, urlString: urlStr, parameters: params){
+            (json,isSuccess) in
+            print("accessToken获取：\(json)")
+            
+            self.userAccount.modelSet(with: (json as? [String: AnyObject]) ?? [:])
+            
+            
+            //加载用户信息
+            self.loadUserInfo(completion: { (dict) in
+                self.userAccount.modelSet(with: dict)
+                print(self.userAccount)
+                
+                self.userAccount.saveAccount()
+                completion(isSuccess)
+            })
+        }
+        
     }
 }

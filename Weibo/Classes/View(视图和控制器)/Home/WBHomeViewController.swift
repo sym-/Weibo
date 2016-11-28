@@ -18,6 +18,7 @@ class WBHomeViewController: WBBaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupNavTitle()
     }
     
     @objc fileprivate func showFriends(){
@@ -29,6 +30,9 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData() {
         listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+            if self.isPullup == false{
+                self.tabBarItem.badgeValue = nil
+            }
             self.isPullup = false
             self.refreshControl?.endRefreshing()
             if shouldRefresh{
@@ -48,7 +52,18 @@ extension WBHomeViewController{
         tableView?.register(UITableViewCell.self, forCellReuseIdentifier: CellId)
     }
     
+    func setupNavTitle() {
+        let btn = UIButton.ym_textBtn(title: "sym1992", fontSize: 17, normalColor: UIColor.darkGray, highlightedColor: UIColor.black)
+        btn.setImage(UIImage(named: "navigationbar_arrow_up"), for: .selected)
+        btn.setImage(UIImage(named: "navigationbar_arrow_down"), for: .normal)
+        btn.layoutButton(with: .right, imageTitleSpace: 5)
+        btn.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+        navItem.titleView = btn
+    }
     
+    @objc func clickTitleButton(btn: UIButton){
+        btn.isSelected = !btn.isSelected
+    }
 }
 
 //表格数据源方法

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="WBNewFeatureView" customModule="Weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="znn-BG-2eW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1e-dx-ESO">
+                    <rect key="frame" x="134.5" y="531" width="105" height="36"/>
+                    <state key="normal" title="进入微博" backgroundImage="new_feature_finish_button"/>
+                    <state key="highlighted" backgroundImage="new_feature_finish_button_highlighted"/>
+                    <connections>
+                        <action selector="enterStatus:" destination="iN0-l3-epB" eventType="touchUpInside" id="qyg-Rz-Q6W"/>
+                    </connections>
+                </button>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="ism-yg-ZDO">
+                    <rect key="frame" x="159.5" y="597" width="55" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.0078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="znn-BG-2eW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="AeP-hj-a8m"/>
+                <constraint firstItem="z1e-dx-ESO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="HkO-KA-1KI"/>
+                <constraint firstAttribute="trailing" secondItem="znn-BG-2eW" secondAttribute="trailing" id="Sww-Af-3ty"/>
+                <constraint firstItem="ism-yg-ZDO" firstAttribute="centerX" secondItem="z1e-dx-ESO" secondAttribute="centerX" id="TFR-QD-2FX"/>
+                <constraint firstItem="ism-yg-ZDO" firstAttribute="top" secondItem="z1e-dx-ESO" secondAttribute="bottom" constant="30" id="Ywf-DS-b6j"/>
+                <constraint firstItem="znn-BG-2eW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="e9E-Sn-Qqq"/>
+                <constraint firstAttribute="bottom" secondItem="z1e-dx-ESO" secondAttribute="bottom" constant="100" id="sJP-7E-ESL"/>
+                <constraint firstAttribute="bottom" secondItem="znn-BG-2eW" secondAttribute="bottom" id="y1Q-fO-dbP"/>
+            </constraints>
+            <connections>
+                <outlet property="enterButton" destination="z1e-dx-ESO" id="G3I-0a-giu"/>
+                <outlet property="pageControl" destination="ism-yg-ZDO" id="tuW-lN-F4d"/>
+                <outlet property="scrollView" destination="znn-BG-2eW" id="au1-9z-dcS"/>
+            </connections>
+            <point key="canvasLocation" x="59.5" y="113.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="new_feature_finish_button" width="105" height="36"/>
+        <image name="new_feature_finish_button_highlighted" width="105" height="36"/>
+    </resources>
+</document>

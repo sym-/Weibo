@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import SVProgressHUD
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,24 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        //取得用户授权显示通知【提示条/声音/badgeNumber】,#available用来判断系统
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge, .carPlay]){
-                success, error in
-                
-            }
-        } else {
-            // Fallback on earlier versions
-            let notifySettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
-            application.registerUserNotificationSettings(notifySettings)
-        }
-        
         window = UIWindow()
         window?.backgroundColor = UIColor.white;
         window?.rootViewController = WBMainViewController()
         window?.makeKeyAndVisible()
         
         loadAppInfo()
+        setupAddition()
         
         return true
     }
@@ -64,6 +55,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+//设置程序额外信息
+extension AppDelegate{
+    fileprivate func setupAddition(){
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
+        
+        //取得用户授权显示通知【提示条/声音/badgeNumber】,#available用来判断系统
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge, .carPlay]){
+                success, error in
+                
+            }
+        } else {
+            // Fallback on earlier versions
+            let notifySettings = UIUserNotificationSettings(types: [.alert, .sound, .badge], categories: nil)
+            UIApplication.shared.registerUserNotificationSettings(notifySettings)
+        }
+    }
+    
+}
+
+//加载程序主信息
 extension AppDelegate{
     fileprivate func loadAppInfo(){
         DispatchQueue.global().async {

@@ -17,20 +17,28 @@ enum WBHTTPMethod {
 
 class WBNetworkManager: AFHTTPSessionManager {
     //单例:静态，常量
-    static let shared = WBNetworkManager()
+    static let shared: WBNetworkManager = {
+        let instance = WBNetworkManager()
+        //初始化
+        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+        
+        return instance
+    }()
     
-    var accessToken: String? //= "2.00RLN_RERRDPhD0aefb2d334zgibDE"
+//    var accessToken: String? //= "2.00RLN_RERRDPhD0aefb2d334zgibDE"
+//    var uid: String?
+    lazy var userAccount = WBUserAccount()
     
     var userLogon:Bool{
-        return accessToken != nil
+        return userAccount.access_token != nil
     }
-    
-    var uid: String? 
     
     func tokenRequest(method: WBHTTPMethod = .GET,urlString: String, parameters:[String: Any]?,completion:@escaping (_ json:Any?,_ isSuccess: Bool)->()){
         
-        guard let token = accessToken else {
+        guard let token = userAccount.access_token else {
             print("没有token，需要登录")
+            
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
             
             completion(nil,false)
             return
@@ -51,10 +59,11 @@ class WBNetworkManager: AFHTTPSessionManager {
         }
         
         let failure = {(task: URLSessionDataTask?, error:Error) -> () in
+            print("error:\(error)")
             if (task?.response as? HTTPURLResponse)?.statusCode == 403{
                 print("Token过期，需要重新登录")
                 //FIXME:发送通知
-                 
+                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: "bad token")
             }
             else{
                 

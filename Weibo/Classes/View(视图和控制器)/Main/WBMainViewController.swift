@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class WBMainViewController: UITabBarController {
     
@@ -18,6 +19,7 @@ class WBMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeBtn()
         setupTimer()
+        setupNewFeatureViews()
         delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(userLogin), name: NSNotification.Name(rawValue: WBUserShouldLoginNotification), object: nil)
@@ -33,11 +35,24 @@ class WBMainViewController: UITabBarController {
         
     }
     
-    @objc fileprivate func userLogin(){
-        let vc = WBOAuthViewController()
-        let nav = UINavigationController(rootViewController: vc)
+    @objc fileprivate func userLogin(noti: Notification){
+        let obj = noti.object
+        var dispath_time = DispatchTime.now()
+        if obj != nil {
+//            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.setBackgroundColor(UIColor.black)
+            SVProgressHUD.showInfo(withStatus: "用户登录已经超时，需要重新登录")
+            dispath_time = DispatchTime.now() + 2
+        }
         
-        present(nav, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: dispath_time){ _ in
+//            SVProgressHUD.setDefaultMaskType(.clear)
+            let vc = WBOAuthViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true, completion: nil)
+        }
+        
     }
     
     override var shouldAutorotate: Bool{
@@ -49,6 +64,34 @@ class WBMainViewController: UITabBarController {
     }
 
     fileprivate lazy var composeBtn: UIButton = UIButton.ym_imageBtn(imageName: "tabbar_compose_icon_add", backgroungImageName: "tabbar_compose_button")
+}
+
+//设置新特性
+extension WBMainViewController{
+    fileprivate func setupNewFeatureViews(){
+        /*检测版本。
+        有新版本，显示新特性
+        没有新版本，显示欢迎*/
+        if WBNetworkManager.shared.userLogon == false{
+            return
+        }
+        
+        let v = isNewsVersion ? WBNewFeatureView.newFeatureView() : WBWelcomeView.welcomeView()
+        
+        view.addSubview(v)
+    }
+    
+    fileprivate var isNewsVersion: Bool{
+//        FIXME:移除
+//        return true
+        let currentVersion =  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        let oldVersion = UserDefaults.standard.value(forKey: WBOldVersionKey) as? String ?? ""
+        UserDefaults.standard.setValue(currentVersion, forKey: WBOldVersionKey)
+        if currentVersion == oldVersion {
+            return false
+        }
+        return true
+    }
 }
 
 //TabbarController代理

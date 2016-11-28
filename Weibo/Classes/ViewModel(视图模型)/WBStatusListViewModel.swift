@@ -23,7 +23,7 @@ class WBStatusListViewModel{
     ///
     /// - Parameters:
     ///   - pullup: YES:上啦刷新
-    ///   - completion: isSuccess:网络请求成功，hasMorePullup:能继续上啦
+    ///   - completion: isSuccess:网络请求成功，shouldRefresh:能继续上啦
     func loadStatus(pullup:Bool, completion:@escaping (_ isSuccess: Bool, _ shouldRefresh: Bool)->()) -> () {
         
         if pullup && pullupErrorTimes > maxPullupTryTimes {
