@@ -106,6 +106,9 @@ extension WBMainViewController: UITabBarControllerDelegate{
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5, execute: {
                 vc.loadData()
             })
+            
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         
         return !viewController.isMember(of: UIViewController.self)

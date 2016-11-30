@@ -30,9 +30,9 @@ class WBHomeViewController: WBBaseViewController {
     
     override func loadData() {
         listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
-            if self.isPullup == false{
-                self.tabBarItem.badgeValue = nil
-            }
+//            if self.isPullup == false{
+//                self.tabBarItem.badgeValue = nil
+//            }
             self.isPullup = false
             self.refreshControl?.endRefreshing()
             if shouldRefresh{
@@ -49,7 +49,12 @@ extension WBHomeViewController{
         
         //导航
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFriends))
-        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: CellId)
+//        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: CellId)
+        tableView?.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: CellId)
+        
+        tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 300
+        tableView?.separatorStyle = .none
     }
     
     func setupNavTitle() {
@@ -73,9 +78,9 @@ extension WBHomeViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath)
-        
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! WBStatusCell
+        let viewModel = listViewModel.statusList[indexPath.row]
+        cell.viewModel = viewModel
         
         return cell
     }

@@ -22,3 +22,13 @@ let WBUserLoginSuccessNotification = "WBUserLoginSuccessNotification"
 
 //UserDefault里面的保存的旧版本号
 let WBOldVersionKey = "WBOldVersionKey"
+
+// 微博配图视图常量
+//配图视图外侧间距
+let WBStatusPictureViewOutterMargin: CGFloat = 12
+//配图视图内部图像视图间距
+let WBStatusPictureViewInnerMargin: CGFloat = 3
+//配图视图高度
+let WBStatusPictureViewWidth = UIScreen.ym_screenWidth() - 2*WBStatusPictureViewOutterMargin
+//每个item默认的宽度
+let WBStatusPictureItemWidth = (WBStatusPictureViewWidth - 2*WBStatusPictureViewInnerMargin) / 3

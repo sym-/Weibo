@@ -16,7 +16,8 @@ class WBStatusListViewModel{
     private let maxPullupTryTimes = 3
     //上啦刷新错误次数
     private var pullupErrorTimes = 0
-    lazy var statusList = [WBStatus]()
+    
+    lazy var statusList = [WBStatusViewModel]()
     
     
     /// <#Description#>
@@ -32,16 +33,31 @@ class WBStatusListViewModel{
             return
         }
         
-        let since_id = pullup ? 0 : (self.statusList.first?.id ?? 0)
+        let since_id = pullup ? 0 : (self.statusList.first?.status.id ?? 0)
         
-        let max_id = !pullup ? 0 : (self.statusList.last?.id ?? 0)
+        let max_id = !pullup ? 0 : (self.statusList.last?.status.id ?? 0)
         
         WBNetworkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
-            
-            guard let array = NSArray.modelArray(with: WBStatus.self, json: list ?? []) as? [WBStatus] else{
+            if !isSuccess{
                 completion(isSuccess, false)
+                
                 return
             }
+            
+            var array = [WBStatusViewModel]()
+            
+            for dict in list ?? []{
+                guard let model = WBStatus.model(with: dict) else{
+                    continue
+                }
+                array.append(WBStatusViewModel(model: model))
+            }
+            
+//            guard let array = NSArray.modelArray(with: WBStatus.self, json: list ?? []) as? [WBStatus] else{
+//                completion(isSuccess, false)
+//                return
+//            }
+            
             if pullup{
                 //上啦刷新，数组放在后边
                 self.statusList = self.statusList + array
