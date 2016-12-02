@@ -33,7 +33,13 @@ class WBStatusViewModel:CustomStringConvertible {
     /// 配图视图大小
     var pictureViewSize = CGSize.zero
     
+    /// 如果是被转发微博，原创微博一定没有图
+    var picURLs: [WBStatusPicture]?{
+        return status.retweeted_status?.pic_urls ?? status.pic_urls
+    }
     
+    /// 被转发微博文字
+    var retweedtedText: String?
     init(model: WBStatus) {
         self.status = model
         //common_icon_membership_level1
@@ -61,7 +67,11 @@ class WBStatusViewModel:CustomStringConvertible {
         commentStr = countString(count: model.comments_count, defaultString: "转发")
         likeStr = countString(count: model.attitudes_count, defaultString: "转发")
         
-        pictureViewSize = calcPictureViewSize(count: model.pic_urls?.count)
+        pictureViewSize = calcPictureViewSize(count: picURLs?.count)
+        
+        retweedtedText = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
+            + ":"
+            + "\(status.retweeted_status?.text ?? "")"
     }
     
     fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
@@ -96,5 +106,14 @@ class WBStatusViewModel:CustomStringConvertible {
     
     var description: String{
         return status.description
+    }
+    
+    func updateSingleImageSize(image: UIImage) {
+        var size = image.size
+        size.height += WBStatusPictureViewOutterMargin
+        size.width < WBStatusPictureItemWidth ? size.width = WBStatusPictureItemWidth : ()
+        
+        //FIXME:此处size有问题
+        pictureViewSize = size
     }
 }

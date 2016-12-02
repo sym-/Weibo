@@ -82,8 +82,6 @@ extension WBMainViewController{
     }
     
     fileprivate var isNewsVersion: Bool{
-//        FIXME:移除
-//        return true
         let currentVersion =  Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
         let oldVersion = UserDefaults.standard.value(forKey: WBOldVersionKey) as? String ?? ""
         UserDefaults.standard.setValue(currentVersion, forKey: WBOldVersionKey)

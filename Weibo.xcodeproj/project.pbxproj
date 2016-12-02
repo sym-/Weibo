@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */; };
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
 		1F4FBB661DDAE3860090DFE9 /* UIButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */; };
@@ -149,6 +150,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		1F4FBB5E1DDAB3D70090DFE9 /* UIButton+SetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 				1F8905201DEEC28A0009A8B9 /* WBStatusToolBar.swift */,
 				1F8905221DEED9660009A8B9 /* WBStatusPictureView.swift */,
 				1F8905181DED833F0009A8B9 /* WBStatusNormalCell.xib */,
+				1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */,
 			);
 			path = StatusCell;
 			sourceTree = "<group>";
@@ -1001,6 +1004,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */,
 				1FCA44061DD4BCED00F65575 /* LaunchScreen.xib in Resources */,
 				1F8905121DEC77C50009A8B9 /* WBNewFeatureView.xib in Resources */,
 				1F8905101DEC12A60009A8B9 /* WBWelcomeView.xib in Resources */,

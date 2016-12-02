@@ -15,7 +15,11 @@ class WBStatus: NSObject {
     /// 正文
     var text: String?
     
+    /// 微博用户
     var user: WBUser?
+    
+    /// 被转发的原创微博
+    var retweeted_status: WBStatus?
     
     /// 微博配图数组
     var pic_urls: [WBStatusPicture]?

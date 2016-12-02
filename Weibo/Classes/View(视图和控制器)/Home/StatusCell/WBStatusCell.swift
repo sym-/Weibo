@@ -36,6 +36,9 @@ class WBStatusCell: UITableViewCell {
     @IBOutlet weak var pictureView: WBStatusPictureView!
     
     
+    /// 被转发微博label
+    @IBOutlet weak var retweetedLabel: UILabel?
+    
     var viewModel: WBStatusViewModel?{
         didSet{
             statusLabel.text = viewModel?.status.text
@@ -44,7 +47,7 @@ class WBStatusCell: UITableViewCell {
             vipIconView.image = viewModel?.vipIcon
             iconView.ym_setImage(urlStr: viewModel?.status.user?.profile_image_url, placeHolderImage: UIImage(named: "avatar_default"), isAvatar: true)
             toolBar.viewModel = viewModel
-            pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            
             timeLabel.text = viewModel?.status.created_at
             sourceLabel.text = viewModel?.status.source
 //            if viewModel?.status.pic_urls?.count ?? 0 > 4 {
@@ -55,7 +58,11 @@ class WBStatusCell: UITableViewCell {
 //            else{
 //                pictureView.urls = viewModel?.status.pic_urls
 //            }
-            pictureView.urls = viewModel?.status.pic_urls
+            pictureView.urls = viewModel?.picURLs
+            //pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+            pictureView.viewModel = viewModel
+            
+            retweetedLabel?.text = viewModel?.retweedtedText
         }
     }
     

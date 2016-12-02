@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SDWebImage
 
 /*如果类需要使用"kvc"或者一些框架，需要继承自NSObject
  如果类只是包装一些代码逻辑，可以不用任何父类
@@ -72,9 +73,48 @@ class WBStatusListViewModel{
                 completion(isSuccess,false)
             }
             else{
-                completion(isSuccess,true)
+                self.cacheSingleImage(list: array,finished: completion)
             }
             
+        }
+    }
+    
+    /// 缓存本次下载微博数据数组中的单张图像
+    ///
+    /// - Parameter list: 本次下载的视图模型数组
+    fileprivate func cacheSingleImage(list: [WBStatusViewModel], finished:@escaping (_ isSuccess: Bool, _ shouldRefresh: Bool)->()){
+        
+        let group = DispatchGroup()
+        
+        /// 记录图片数据长度
+        var length = 0
+        
+        for viewModel in list{
+            if viewModel.picURLs?.count != 1{
+                continue
+            }
+            
+            guard let pic = viewModel.picURLs?[0].thumbnail_pic,
+                let url = URL(string: pic) else{
+                continue
+            }
+            
+            group.enter()
+            SDWebImageManager.shared().downloadImage(with: url, options: [], progress: nil, completed: { (image, _, _, _, _) in
+                if let image = image,
+                    let data = UIImagePNGRepresentation(image){
+                    length += data.count
+                    viewModel.updateSingleImageSize(image: image)
+                }
+                
+                group.leave()
+            })
+            
+        }
+        
+        group.notify(queue: DispatchQueue.main){
+            print("图片缓存完成，image大小：\(length)")
+            finished(true,true)
         }
     }
 }

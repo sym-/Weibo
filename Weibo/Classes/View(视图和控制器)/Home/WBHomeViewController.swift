@@ -8,7 +8,11 @@
 
 import UIKit
 
-private let CellId = "CellId"
+///原创微博重用ID
+private let OriginalCellId = "OriginalCellId"
+
+///被转发微博重用ID
+private let RetweetedCellId = "RetweetedCellId"
 
 class WBHomeViewController: WBBaseViewController {
 
@@ -49,8 +53,8 @@ extension WBHomeViewController{
         
         //导航
         navItem.leftBarButtonItem = UIBarButtonItem(title: "好友", fontSize: 16, target: self, action: #selector(showFriends))
-//        tableView?.register(UITableViewCell.self, forCellReuseIdentifier: CellId)
-        tableView?.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier: CellId)
+        tableView?.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier:OriginalCellId)
+        tableView?.register(UINib(nibName: "WBStatusRetweetedCell", bundle: nil), forCellReuseIdentifier:RetweetedCellId)
         
         tableView?.rowHeight = UITableViewAutomaticDimension
         tableView?.estimatedRowHeight = 300
@@ -78,8 +82,9 @@ extension WBHomeViewController{
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellId, for: indexPath) as! WBStatusCell
         let viewModel = listViewModel.statusList[indexPath.row]
+        let cellId = (viewModel.status.retweeted_status != nil) ? RetweetedCellId : OriginalCellId
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
         cell.viewModel = viewModel
         
         return cell
