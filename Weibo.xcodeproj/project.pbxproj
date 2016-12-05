@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */; };
 		1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */; };
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
@@ -150,6 +151,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshControl.swift; sourceTree = "<group>"; };
 		1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		1F4FBB5E1DDAB3D70090DFE9 /* UIButton+SetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
@@ -417,6 +419,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1F2F603C1DF3F276000464F1 /* YMRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */,
+			);
+			path = YMRefreshControl;
+			sourceTree = "<group>";
+		};
 		1F4FBB611DDAB8010090DFE9 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +548,7 @@
 		1FCA44091DD4BF2700F65575 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
 				1FEFC9FA1DE188A600A18272 /* Network */,
 				1F4FBB611DDAB8010090DFE9 /* Additions */,
 				1F4FBB621DDAB8010090DFE9 /* Extensions */,
@@ -1105,6 +1116,7 @@
 				1FCA44FE1DD4C3B300F65575 /* YYWebImageOperation.m in Sources */,
 				1FCA45091DD4C3B300F65575 /* YYTextSelectionView.m in Sources */,
 				1FCA44D21DD4C3B200F65575 /* NSData+YYAdd.m in Sources */,
+				1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */,
 				1F89050E1DEC078E0009A8B9 /* WBNewFeatureView.swift in Sources */,
 				1FCA450D1DD4C3B300F65575 /* YYTextArchiver.m in Sources */,
 				1F8905211DEEC28A0009A8B9 /* WBStatusToolBar.swift in Sources */,

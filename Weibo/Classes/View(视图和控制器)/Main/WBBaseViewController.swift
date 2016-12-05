@@ -16,7 +16,7 @@ class WBBaseViewController: UIViewController {
     
     lazy var navItem = UINavigationItem()
     
-    var refreshControl: UIRefreshControl?
+    var refreshControl: YMRefreshControl?
     
     var isPullup = false
     
@@ -90,7 +90,7 @@ extension WBBaseViewController{
         //修改滚动条位置
         tableView?.scrollIndicatorInsets = tableView?.contentInset ?? UIEdgeInsets.zero
         
-        refreshControl = UIRefreshControl()
+        refreshControl = YMRefreshControl()
         tableView?.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }

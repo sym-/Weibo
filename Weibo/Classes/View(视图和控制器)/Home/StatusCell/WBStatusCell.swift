@@ -58,7 +58,7 @@ class WBStatusCell: UITableViewCell {
 //            else{
 //                pictureView.urls = viewModel?.status.pic_urls
 //            }
-            pictureView.urls = viewModel?.picURLs
+//            pictureView.urls = viewModel?.picURLs
             //pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             pictureView.viewModel = viewModel
             
@@ -69,6 +69,17 @@ class WBStatusCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        /*
+        //离屏渲染--异步绘制
+        layer.drawsAsynchronously = true
+        //栅格化--异步绘制，会生成一张图像，cell在屏幕上滚动的时候，本质上滚动的是这张图片
+        //cell 优化，要尽量减少图层的数量，相当于只有一层
+        //停止滚动之后可以接受监听
+        layer.shouldRasterize = true
+        //设置分辨率
+        layer.rasterizationScale = UIScreen.main.scale
+         */
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

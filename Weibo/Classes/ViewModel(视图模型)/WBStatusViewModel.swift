@@ -40,6 +40,10 @@ class WBStatusViewModel:CustomStringConvertible {
     
     /// 被转发微博文字
     var retweedtedText: String?
+    
+    /// 行高
+    var rowHeight: CGFloat = 0
+    
     init(model: WBStatus) {
         self.status = model
         //common_icon_membership_level1
@@ -72,6 +76,9 @@ class WBStatusViewModel:CustomStringConvertible {
         retweedtedText = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
             + ":"
             + "\(status.retweeted_status?.text ?? "")"
+        
+        //计算行高
+        updateRowHeight()
     }
     
     fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
@@ -108,12 +115,74 @@ class WBStatusViewModel:CustomStringConvertible {
         return status.description
     }
     
+    
+    /// 根据当前视图模型内容计算行高
+    func updateRowHeight(){
+        let margin: CGFloat = 12
+        let iconHeight: CGFloat = 34
+        let toolbarHeight: CGFloat = 35
+        
+        var height: CGFloat = 0
+        
+        let viewSize: CGSize = CGSize(width: UIScreen.ym_screenWidth() - 2*margin, height: CGFloat(MAXFLOAT))
+        
+        let originFont = UIFont.systemFont(ofSize: 15)
+        
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        
+        //顶部位置
+        height = 2 * margin + iconHeight + margin
+        
+        //正文高度
+        if let text = status.text {
+            height += (text as NSString).boundingRect(with: viewSize,
+                                            options: [.usesLineFragmentOrigin],
+                                            attributes: [NSFontAttributeName: originFont],
+                                            context: nil).height
+        }
+        
+        //是否转发微博
+        if status.retweeted_status != nil{
+            height += 2*margin
+            //转发文本高度
+            if let text = retweedtedText {
+                height += (text as NSString).boundingRect(with: viewSize,
+                                                options: [.usesLineFragmentOrigin],
+                                                attributes: [NSFontAttributeName: retweetedFont],
+                                                context: nil).height
+
+            }
+        }
+        
+        //配图视图
+        height += pictureViewSize.height
+        height += margin
+        height += toolbarHeight
+        
+        rowHeight = height
+    }
+    
     func updateSingleImageSize(image: UIImage) {
         var size = image.size
-        size.height += WBStatusPictureViewOutterMargin
-        size.width < WBStatusPictureItemWidth ? size.width = WBStatusPictureItemWidth : ()
         
-        //FIXME:此处size有问题
+        let maxWidth: CGFloat = 300
+        let minWidth: CGFloat = 40
+        //图像过宽
+        if size.width > maxWidth {
+            size.width = maxWidth
+            size.height = size.width * image.size.height / image.size.width
+        }
+        
+        //图像过窄
+        if size.width < minWidth {
+            size.width = minWidth
+            size.height = size.width * image.size.height / image.size.width
+        }
+        size.height += WBStatusPictureViewOutterMargin
+        
         pictureViewSize = size
+        
+        //更新行高
+        updateRowHeight()
     }
 }

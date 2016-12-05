@@ -56,8 +56,8 @@ extension WBHomeViewController{
         tableView?.register(UINib(nibName: "WBStatusNormalCell", bundle: nil), forCellReuseIdentifier:OriginalCellId)
         tableView?.register(UINib(nibName: "WBStatusRetweetedCell", bundle: nil), forCellReuseIdentifier:RetweetedCellId)
         
-        tableView?.rowHeight = UITableViewAutomaticDimension
-        tableView?.estimatedRowHeight = 300
+        //tableView?.rowHeight = UITableViewAutomaticDimension
+            tableView?.estimatedRowHeight = 300
         tableView?.separatorStyle = .none
     }
     
@@ -88,5 +88,11 @@ extension WBHomeViewController{
         cell.viewModel = viewModel
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let viewModel = listViewModel.statusList[indexPath.row]
+        
+        return viewModel.rowHeight
     }
 }

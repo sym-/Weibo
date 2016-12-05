@@ -13,35 +13,14 @@ class WBStatusPictureView: UIView {
     var viewModel: WBStatusViewModel?{
         didSet{
             calcViewSize()
+            
+            urls = viewModel?.picURLs
         }
     }
     
-    /// 根据视图模型配图视图大小，调整显示内容
-    fileprivate func calcViewSize(){
-        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
-        
-        let viewSize = viewModel?.pictureViewSize ?? CGSize.zero
-        let imageV0 = subviews[0]
-        //1.单图
-        if viewModel?.picURLs?.count == 1 {
-            imageV0.frame = CGRect(x: 0,
-                                   y:WBStatusPictureViewOutterMargin,
-                                   width: viewSize.width,
-                                   height: viewSize.height - WBStatusPictureViewOutterMargin)
-        }
-        //2.多图
-        else{
-            imageV0.frame = CGRect(x: 0,
-                                   y: WBStatusPictureViewOutterMargin,
-                                   width: WBStatusPictureItemWidth,
-                                   height: WBStatusPictureItemWidth)
-        }
-        
-    }
-
     @IBOutlet weak var heightCons: NSLayoutConstraint!
     
-    var urls: [WBStatusPicture]?{
+     fileprivate var urls: [WBStatusPicture]?{
         didSet{
             for v in subviews{
                 v.isHidden = true
@@ -64,6 +43,29 @@ class WBStatusPictureView: UIView {
         super.awakeFromNib()
         
         setupUI()
+    }
+    
+    /// 根据视图模型配图视图大小，调整显示内容
+    fileprivate func calcViewSize(){
+        heightCons.constant = viewModel?.pictureViewSize.height ?? 0
+        
+        let viewSize = viewModel?.pictureViewSize ?? CGSize.zero
+        let imageV0 = subviews[0]
+        //1.单图
+        if viewModel?.picURLs?.count == 1 {
+            imageV0.frame = CGRect(x: 0,
+                                   y:WBStatusPictureViewOutterMargin,
+                                   width: viewSize.width,
+                                   height: viewSize.height - WBStatusPictureViewOutterMargin)
+        }
+            //2.多图
+        else{
+            imageV0.frame = CGRect(x: 0,
+                                   y: WBStatusPictureViewOutterMargin,
+                                   width: WBStatusPictureItemWidth,
+                                   height: WBStatusPictureItemWidth)
+        }
+        
     }
 }
 
