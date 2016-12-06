@@ -33,16 +33,17 @@ class WBHomeViewController: WBBaseViewController {
     }
     
     override func loadData() {
-        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
-//            if self.isPullup == false{
-//                self.tabBarItem.badgeValue = nil
-//            }
-            self.isPullup = false
-            self.refreshControl?.endRefreshing()
-            if shouldRefresh{
-                self.tableView?.reloadData()
+        self.refreshControl?.beginRefreshing()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){ _ in
+            self.listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
+                self.isPullup = false
+                self.refreshControl?.endRefreshing()
+                if shouldRefresh{
+                    self.tableView?.reloadData()
+                }
             }
         }
+        
     }
 }
 

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */; };
+		1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F606A1DF68E0D000464F1 /* YMRefresh.bundle */; };
+		1F2F606E1DF68E0D000464F1 /* YMRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F606B1DF68E0D000464F1 /* YMRefreshView.swift */; };
+		1F2F606F1DF68E0D000464F1 /* YMRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F606C1DF68E0D000464F1 /* YMRefreshView.xib */; };
+		1F2F61B21DF6AAE3000464F1 /* YMDianPingRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F61B01DF6AAE3000464F1 /* YMDianPingRefreshView.swift */; };
+		1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F61B11DF6AAE3000464F1 /* YMDianPingRefreshView.xib */; };
 		1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */; };
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
@@ -152,6 +157,11 @@
 
 /* Begin PBXFileReference section */
 		1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshControl.swift; sourceTree = "<group>"; };
+		1F2F606A1DF68E0D000464F1 /* YMRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YMRefresh.bundle; sourceTree = "<group>"; };
+		1F2F606B1DF68E0D000464F1 /* YMRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshView.swift; sourceTree = "<group>"; };
+		1F2F606C1DF68E0D000464F1 /* YMRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRefreshView.xib; sourceTree = "<group>"; };
+		1F2F61B01DF6AAE3000464F1 /* YMDianPingRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMDianPingRefreshView.swift; sourceTree = "<group>"; };
+		1F2F61B11DF6AAE3000464F1 /* YMDianPingRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMDianPingRefreshView.xib; sourceTree = "<group>"; };
 		1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		1F4FBB5E1DDAB3D70090DFE9 /* UIButton+SetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
@@ -422,7 +432,12 @@
 		1F2F603C1DF3F276000464F1 /* YMRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F606A1DF68E0D000464F1 /* YMRefresh.bundle */,
 				1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */,
+				1F2F606B1DF68E0D000464F1 /* YMRefreshView.swift */,
+				1F2F606C1DF68E0D000464F1 /* YMRefreshView.xib */,
+				1F2F61B01DF6AAE3000464F1 /* YMDianPingRefreshView.swift */,
+				1F2F61B11DF6AAE3000464F1 /* YMDianPingRefreshView.xib */,
 			);
 			path = YMRefreshControl;
 			sourceTree = "<group>";
@@ -515,8 +530,8 @@
 				1FC759C01DD4B5280064320D /* AppDelegate.swift */,
 				1FCA45211DD4C3D000F65575 /* Weibo-Bridge.h */,
 				1FCA44051DD4BCED00F65575 /* LaunchScreen.xib */,
-				1FC759C71DD4B5280064320D /* Assets.xcassets */,
 				1FCA44031DD4BA7400F65575 /* ad_background@2x.png */,
+				1FC759C71DD4B5280064320D /* Assets.xcassets */,
 				1FC759CC1DD4B5280064320D /* Info.plist */,
 			);
 			path = Weibo;
@@ -1021,7 +1036,10 @@
 				1F8905101DEC12A60009A8B9 /* WBWelcomeView.xib in Resources */,
 				1FCA44041DD4BA7400F65575 /* ad_background@2x.png in Resources */,
 				1F8905191DED833F0009A8B9 /* WBStatusNormalCell.xib in Resources */,
+				1F2F606F1DF68E0D000464F1 /* YMRefreshView.xib in Resources */,
 				1FEFC9F91DDF187B00A18272 /* main.json in Resources */,
+				1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */,
+				1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */,
 				1FC759C81DD4B5280064320D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1081,6 +1099,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F2F61B21DF6AAE3000464F1 /* YMDianPingRefreshView.swift in Sources */,
 				1F8905021DE821B10009A8B9 /* WBBaseObject.swift in Sources */,
 				1FCA44D11DD4C3B200F65575 /* NSBundle+YYAdd.m in Sources */,
 				1FCA44161DD4BFCE00F65575 /* WBBaseViewController.swift in Sources */,
@@ -1173,6 +1192,7 @@
 				1F8905171DED831B0009A8B9 /* WBStatusCell.swift in Sources */,
 				1FCA44FC1DD4C3B300F65575 /* YYSpriteSheetImage.m in Sources */,
 				1FCA451D1DD4C3B300F65575 /* YYThreadSafeDictionary.m in Sources */,
+				1F2F606E1DF68E0D000464F1 /* YMRefreshView.swift in Sources */,
 				1FCA450C1DD4C3B300F65575 /* UIPasteboard+YYText.m in Sources */,
 				1F8904F91DE736AA0009A8B9 /* WBOAuthViewController.swift in Sources */,
 				1FCA44EA1DD4C3B200F65575 /* UIScrollView+YYAdd.m in Sources */,

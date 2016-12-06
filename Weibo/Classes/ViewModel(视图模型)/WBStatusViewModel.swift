@@ -176,9 +176,11 @@ class WBStatusViewModel:CustomStringConvertible {
         //图像过窄
         if size.width < minWidth {
             size.width = minWidth
-            size.height = size.width * image.size.height / image.size.width
+            size.height = size.width * image.size.height / image.size.width / 4
         }
         size.height += WBStatusPictureViewOutterMargin
+        
+        
         
         pictureViewSize = size
         
