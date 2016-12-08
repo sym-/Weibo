@@ -30,9 +30,24 @@ class WBMainViewController: UITabBarController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    //撰写微博
     @objc fileprivate func composeStatus() {
-        //撰写微博
-        
+        //FIXME:登录验证
+        let v = WBComposeTypeView.composeTypeView()
+        v.show {[weak v]  (clsName: String?) in
+            guard let clsName = clsName,
+                let cls = NSClassFromString(Bundle.main.namespace + "." + clsName) as? UIViewController.Type else{
+                v?.removeFromSuperview()    
+                return
+            }
+            
+            let vc = cls.init()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.present(nav, animated: true){
+                v?.removeFromSuperview()
+            }
+        }
     }
     
     @objc fileprivate func userLogin(noti: Notification){

@@ -13,7 +13,12 @@
 		1F2F606F1DF68E0D000464F1 /* YMRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F606C1DF68E0D000464F1 /* YMRefreshView.xib */; };
 		1F2F61B21DF6AAE3000464F1 /* YMDianPingRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F61B01DF6AAE3000464F1 /* YMDianPingRefreshView.swift */; };
 		1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F61B11DF6AAE3000464F1 /* YMDianPingRefreshView.xib */; };
+		1F2F63B11DF6B7B3000464F1 /* WBComposeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F63B01DF6B7B3000464F1 /* WBComposeTypeView.swift */; };
+		1F2F63B31DF6BB6A000464F1 /* WBComposeTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F63B21DF6BB6A000464F1 /* WBComposeTypeView.xib */; };
+		1F2F63B51DF6C95E000464F1 /* WBComposeTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F63B41DF6C95E000464F1 /* WBComposeTypeButton.swift */; };
+		1F2F63B71DF6C970000464F1 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F63B61DF6C970000464F1 /* WBComposeTypeButton.xib */; };
 		1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */; };
+		1F460E9F1DF90F0F000E8150 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */; };
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
 		1F4FBB661DDAE3860090DFE9 /* UIButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */; };
@@ -162,7 +167,12 @@
 		1F2F606C1DF68E0D000464F1 /* YMRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMRefreshView.xib; sourceTree = "<group>"; };
 		1F2F61B01DF6AAE3000464F1 /* YMDianPingRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMDianPingRefreshView.swift; sourceTree = "<group>"; };
 		1F2F61B11DF6AAE3000464F1 /* YMDianPingRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMDianPingRefreshView.xib; sourceTree = "<group>"; };
+		1F2F63B01DF6B7B3000464F1 /* WBComposeTypeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeView.swift; sourceTree = "<group>"; };
+		1F2F63B21DF6BB6A000464F1 /* WBComposeTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeView.xib; sourceTree = "<group>"; };
+		1F2F63B41DF6C95E000464F1 /* WBComposeTypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTypeButton.swift; sourceTree = "<group>"; };
+		1F2F63B61DF6C970000464F1 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
+		1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
 		1F4FBB5E1DDAB3D70090DFE9 /* UIButton+SetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -442,6 +452,26 @@
 			path = YMRefreshControl;
 			sourceTree = "<group>";
 		};
+		1F2F63AE1DF6B795000464F1 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F63AF1DF6B795000464F1 /* ComposeType */,
+				1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
+		1F2F63AF1DF6B795000464F1 /* ComposeType */ = {
+			isa = PBXGroup;
+			children = (
+				1F2F63B01DF6B7B3000464F1 /* WBComposeTypeView.swift */,
+				1F2F63B21DF6BB6A000464F1 /* WBComposeTypeView.xib */,
+				1F2F63B41DF6C95E000464F1 /* WBComposeTypeButton.swift */,
+				1F2F63B61DF6C970000464F1 /* WBComposeTypeButton.xib */,
+			);
+			path = ComposeType;
+			sourceTree = "<group>";
+		};
 		1F4FBB611DDAB8010090DFE9 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
@@ -575,6 +605,7 @@
 		1FCA440A1DD4BF2700F65575 /* View(视图和控制器) */ = {
 			isa = PBXGroup;
 			children = (
+				1F2F63AE1DF6B795000464F1 /* Compose */,
 				1FCA440D1DD4BF2700F65575 /* Main */,
 				1FCA440C1DD4BF2700F65575 /* Home */,
 				1FCA440E1DD4BF2700F65575 /* Message */,
@@ -1038,8 +1069,10 @@
 				1F8905191DED833F0009A8B9 /* WBStatusNormalCell.xib in Resources */,
 				1F2F606F1DF68E0D000464F1 /* YMRefreshView.xib in Resources */,
 				1FEFC9F91DDF187B00A18272 /* main.json in Resources */,
+				1F2F63B71DF6C970000464F1 /* WBComposeTypeButton.xib in Resources */,
 				1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */,
 				1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */,
+				1F2F63B31DF6BB6A000464F1 /* WBComposeTypeView.xib in Resources */,
 				1FC759C81DD4B5280064320D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1134,6 +1167,7 @@
 				1FCA44121DD4BF7A00F65575 /* WBMainViewController.swift in Sources */,
 				1FCA44FE1DD4C3B300F65575 /* YYWebImageOperation.m in Sources */,
 				1FCA45091DD4C3B300F65575 /* YYTextSelectionView.m in Sources */,
+				1F460E9F1DF90F0F000E8150 /* WBComposeViewController.swift in Sources */,
 				1FCA44D21DD4C3B200F65575 /* NSData+YYAdd.m in Sources */,
 				1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */,
 				1F89050E1DEC078E0009A8B9 /* WBNewFeatureView.swift in Sources */,
@@ -1150,6 +1184,7 @@
 				1F8905091DEBE0A20009A8B9 /* UIButton+TTEnlargeEdge.m in Sources */,
 				1FCA44F11DD4C3B200F65575 /* YYMemoryCache.m in Sources */,
 				1FEFC9F01DDC408100A18272 /* UIBarButtonItem+Extension.swift in Sources */,
+				1F2F63B51DF6C95E000464F1 /* WBComposeTypeButton.swift in Sources */,
 				1FCA44D91DD4C3B200F65575 /* NSObject+YYAddForARC.m in Sources */,
 				1FCA45191DD4C3B300F65575 /* YYKeychain.m in Sources */,
 				1FCA44DD1DD4C3B200F65575 /* NSTimer+YYAdd.m in Sources */,
@@ -1194,6 +1229,7 @@
 				1FCA451D1DD4C3B300F65575 /* YYThreadSafeDictionary.m in Sources */,
 				1F2F606E1DF68E0D000464F1 /* YMRefreshView.swift in Sources */,
 				1FCA450C1DD4C3B300F65575 /* UIPasteboard+YYText.m in Sources */,
+				1F2F63B11DF6B7B3000464F1 /* WBComposeTypeView.swift in Sources */,
 				1F8904F91DE736AA0009A8B9 /* WBOAuthViewController.swift in Sources */,
 				1FCA44EA1DD4C3B200F65575 /* UIScrollView+YYAdd.m in Sources */,
 				1FCA44F51DD4C3B200F65575 /* UIButton+YYWebImage.m in Sources */,
@@ -1326,6 +1362,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADERMAP_USER_VFS = YES;
 				INFOPLIST_FILE = Weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1346,6 +1383,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADERMAP_USER_VFS = YES;
 				INFOPLIST_FILE = Weibo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
