@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HMEmoticon.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Weibo.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,6 +42,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0595D4FBAA1E67DB8E7A134B2AB6A10C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0776B0943DB6CC4437D401C1E47D7DB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>16AFDC7992E723C47D1BF43207CDA5BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>1C3436CEA5C3D39764C5F54374794ECB</key>
 		<dict>
 			<key>primary</key>
@@ -47,22 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2B743737077DCC6741659825A4FB62B7</key>
+		<key>9FCEB09D2FFE6931E699625CB37F51F2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4FE87359C577462E25EFB76453A23B2E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D7CF7DF2C95B236BE20E0F2A5A25785A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E91CD04F9FD9BEDC28EDB30535B15A82</key>
+		<key>CF26BB0669D3820B954817FDE1FBD51E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

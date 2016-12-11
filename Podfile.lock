@@ -17,6 +17,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - HMEmoticon (1.0.8)
   - pop (1.0.9)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -26,6 +27,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - FMDB
+  - HMEmoticon
   - pop
   - SDWebImage
   - SVProgressHUD
@@ -33,10 +35,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  HMEmoticon: e81bad38c498e366c6cce58aa1204f1f7528a9bc
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
 
-PODFILE CHECKSUM: 90fbcb677def657339673c70673312a02541c4ca
+PODFILE CHECKSUM: bccad026ae1699e3016478d503f8d8b0abd1d93d
 
 COCOAPODS: 1.0.1

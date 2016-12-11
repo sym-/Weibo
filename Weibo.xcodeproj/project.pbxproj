@@ -19,6 +19,7 @@
 		1F2F63B71DF6C970000464F1 /* WBComposeTypeButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F63B61DF6C970000464F1 /* WBComposeTypeButton.xib */; };
 		1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */; };
 		1F460E9F1DF90F0F000E8150 /* WBComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */; };
+		1F460EA11DF9A036000E8150 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F460EA01DF9A036000E8150 /* String+Extension.swift */; };
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
 		1F4FBB661DDAE3860090DFE9 /* UIButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */; };
@@ -43,6 +44,9 @@
 		1F8905211DEEC28A0009A8B9 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905201DEEC28A0009A8B9 /* WBStatusToolBar.swift */; };
 		1F8905231DEED9660009A8B9 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905221DEED9660009A8B9 /* WBStatusPictureView.swift */; };
 		1F8905251DEEDEBB0009A8B9 /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905241DEEDEBB0009A8B9 /* WBStatusPicture.swift */; };
+		1FB528091DFD4ADA00E8306D /* YMEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */; };
+		1FB5280A1DFD4ADA00E8306D /* YMEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */; };
+		1FB5280B1DFD4ADA00E8306D /* YMEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */; };
 		1FC759C11DD4B5280064320D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC759C01DD4B5280064320D /* AppDelegate.swift */; };
 		1FC759C81DD4B5280064320D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC759C71DD4B5280064320D /* Assets.xcassets */; };
 		1FCA44041DD4BA7400F65575 /* ad_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA44031DD4BA7400F65575 /* ad_background@2x.png */; };
@@ -173,6 +177,7 @@
 		1F2F63B61DF6C970000464F1 /* WBComposeTypeButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeTypeButton.xib; sourceTree = "<group>"; };
 		1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBStatusRetweetedCell.xib; sourceTree = "<group>"; };
 		1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeViewController.swift; sourceTree = "<group>"; };
+		1F460EA01DF9A036000E8150 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		1F4FBB5E1DDAB3D70090DFE9 /* UIButton+SetUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+SetUp.h"; sourceTree = "<group>"; };
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
@@ -199,6 +204,9 @@
 		1F8905201DEEC28A0009A8B9 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		1F8905221DEED9660009A8B9 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		1F8905241DEEDEBB0009A8B9 /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
+		1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticon.swift; sourceTree = "<group>"; };
+		1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonPackage.swift; sourceTree = "<group>"; };
+		1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonManager.swift; sourceTree = "<group>"; };
 		1FC759BD1DD4B5280064320D /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC759C01DD4B5280064320D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC759C71DD4B5280064320D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -491,6 +499,7 @@
 				1F8905031DE8388F0009A8B9 /* NSString+Extension.swift */,
 				1F8905131DED61410009A8B9 /* UIImage+Extension.swift */,
 				1F89051E1DEEAA130009A8B9 /* UIImageView+Extension.swift */,
+				1F460EA01DF9A036000E8150 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -532,6 +541,24 @@
 				1F4605C31DF11B97000B5405 /* WBStatusRetweetedCell.xib */,
 			);
 			path = StatusCell;
+			sourceTree = "<group>";
+		};
+		1FB528041DFD4ADA00E8306D /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				1FB528051DFD4ADA00E8306D /* Model */,
+				1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		1FB528051DFD4ADA00E8306D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */,
+				1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		1FC759B41DD4B5280064320D = {
@@ -593,6 +620,7 @@
 		1FCA44091DD4BF2700F65575 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1FB528041DFD4ADA00E8306D /* Emoticon */,
 				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
 				1FEFC9FA1DE188A600A18272 /* Network */,
 				1F4FBB611DDAB8010090DFE9 /* Additions */,
@@ -1184,6 +1212,7 @@
 				1F8905091DEBE0A20009A8B9 /* UIButton+TTEnlargeEdge.m in Sources */,
 				1FCA44F11DD4C3B200F65575 /* YYMemoryCache.m in Sources */,
 				1FEFC9F01DDC408100A18272 /* UIBarButtonItem+Extension.swift in Sources */,
+				1FB528091DFD4ADA00E8306D /* YMEmoticon.swift in Sources */,
 				1F2F63B51DF6C95E000464F1 /* WBComposeTypeButton.swift in Sources */,
 				1FCA44D91DD4C3B200F65575 /* NSObject+YYAddForARC.m in Sources */,
 				1FCA45191DD4C3B300F65575 /* YYKeychain.m in Sources */,
@@ -1197,11 +1226,13 @@
 				1F8905041DE8388F0009A8B9 /* NSString+Extension.swift in Sources */,
 				1FCA45181DD4C3B300F65575 /* YYGestureRecognizer.m in Sources */,
 				1FCA450F1DD4C3B300F65575 /* YYTextParser.m in Sources */,
+				1FB5280A1DFD4ADA00E8306D /* YMEmoticonPackage.swift in Sources */,
 				1FCA44D41DD4C3B200F65575 /* NSDictionary+YYAdd.m in Sources */,
 				1FCA45011DD4C3B300F65575 /* YYTextContainerView.m in Sources */,
 				1FCA450E1DD4C3B300F65575 /* YYTextAttribute.m in Sources */,
 				1FCA44F01DD4C3B200F65575 /* YYKVStorage.m in Sources */,
 				1FCA45021DD4C3B300F65575 /* YYTextDebugOption.m in Sources */,
+				1FB5280B1DFD4ADA00E8306D /* YMEmoticonManager.swift in Sources */,
 				1FEFC9FE1DE2FD3100A18272 /* WBNetworkManager+Extension.swift in Sources */,
 				1FEFC9F71DDDC2F900A18272 /* UILabel+Extension.swift in Sources */,
 				1FCA44FD1DD4C3B300F65575 /* YYWebImageManager.m in Sources */,
@@ -1232,6 +1263,7 @@
 				1F2F63B11DF6B7B3000464F1 /* WBComposeTypeView.swift in Sources */,
 				1F8904F91DE736AA0009A8B9 /* WBOAuthViewController.swift in Sources */,
 				1FCA44EA1DD4C3B200F65575 /* UIScrollView+YYAdd.m in Sources */,
+				1F460EA11DF9A036000E8150 /* String+Extension.swift in Sources */,
 				1FCA44F51DD4C3B200F65575 /* UIButton+YYWebImage.m in Sources */,
 				1FCA44F21DD4C3B200F65575 /* _YYWebImageSetter.m in Sources */,
 				1FCA45201DD4C3B300F65575 /* YYWeakProxy.m in Sources */,
@@ -1279,6 +1311,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1328,6 +1361,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

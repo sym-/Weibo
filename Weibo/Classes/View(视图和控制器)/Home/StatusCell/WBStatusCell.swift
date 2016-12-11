@@ -41,7 +41,8 @@ class WBStatusCell: UITableViewCell {
     
     var viewModel: WBStatusViewModel?{
         didSet{
-            statusLabel.text = viewModel?.status.text
+            statusLabel.attributedText = viewModel?.statusAttrText
+            retweetedLabel?.attributedText = viewModel?.retweedtedAttrText
             nameLabel.text = viewModel?.status.user?.screen_name
             memberIconView.image = viewModel?.memberIcon
             vipIconView.image = viewModel?.vipIcon
@@ -49,7 +50,7 @@ class WBStatusCell: UITableViewCell {
             toolBar.viewModel = viewModel
             
             timeLabel.text = viewModel?.status.created_at
-            sourceLabel.text = viewModel?.status.source
+            sourceLabel.text = viewModel?.sourceStr
 //            if viewModel?.status.pic_urls?.count ?? 0 > 4 {
 //                var picUrls = viewModel?.status.pic_urls
 //                picUrls?.removeSubrange((picUrls?.startIndex)! + 4..<(picUrls?.endIndex)!)
@@ -62,7 +63,6 @@ class WBStatusCell: UITableViewCell {
             //pictureView.heightCons.constant = viewModel?.pictureViewSize.height ?? 0
             pictureView.viewModel = viewModel
             
-            retweetedLabel?.text = viewModel?.retweedtedText
         }
     }
     

@@ -38,11 +38,17 @@ class WBStatusViewModel:CustomStringConvertible {
         return status.retweeted_status?.pic_urls ?? status.pic_urls
     }
     
+    /// 微博正文属性文本
+    var statusAttrText: NSAttributedString?
+    
     /// 被转发微博文字
-    var retweedtedText: String?
+    var retweedtedAttrText: NSAttributedString?
     
     /// 行高
     var rowHeight: CGFloat = 0
+    
+    /// 来源
+    var sourceStr: String?
     
     init(model: WBStatus) {
         self.status = model
@@ -73,12 +79,22 @@ class WBStatusViewModel:CustomStringConvertible {
         
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
         
-        retweedtedText = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
+        let originFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont = UIFont.systemFont(ofSize: 14)
+        //微博文本属性文本
+        statusAttrText = YMEmoticonManager.shared.emoticonString(string: model.text ?? "", font: originFont)
+        
+        //被转发文本属性文本
+        let rText = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
             + ":"
             + "\(status.retweeted_status?.text ?? "")"
         
+        retweedtedAttrText = YMEmoticonManager.shared.emoticonString(string: rText, font: retweetedFont)
+
         //计算行高
         updateRowHeight()
+
+        sourceStr = "来自：" + (model.source?.ym_href()?.text ?? "")
     }
     
     fileprivate func calcPictureViewSize(count: Int?) -> CGSize{
@@ -89,6 +105,7 @@ class WBStatusViewModel:CustomStringConvertible {
         if count == 0 {
             return CGSize.zero
         }
+        
         
         //2.计算高度
         let row = (count - 2)/3 + 1
@@ -126,31 +143,24 @@ class WBStatusViewModel:CustomStringConvertible {
         
         let viewSize: CGSize = CGSize(width: UIScreen.ym_screenWidth() - 2*margin, height: CGFloat(MAXFLOAT))
         
-        let originFont = UIFont.systemFont(ofSize: 15)
-        
-        let retweetedFont = UIFont.systemFont(ofSize: 14)
-        
         //顶部位置
         height = 2 * margin + iconHeight + margin
         
         //正文高度
-        if let text = status.text {
-            height += (text as NSString).boundingRect(with: viewSize,
-                                            options: [.usesLineFragmentOrigin],
-                                            attributes: [NSFontAttributeName: originFont],
-                                            context: nil).height
+        if let text = statusAttrText {
+            height += text.boundingRect(with: viewSize,
+                                        options: [.usesLineFragmentOrigin],
+                                        context: nil).height
         }
         
         //是否转发微博
         if status.retweeted_status != nil{
             height += 2*margin
             //转发文本高度
-            if let text = retweedtedText {
-                height += (text as NSString).boundingRect(with: viewSize,
-                                                options: [.usesLineFragmentOrigin],
-                                                attributes: [NSFontAttributeName: retweetedFont],
-                                                context: nil).height
-
+            if let text = retweedtedAttrText {
+                height += text.boundingRect(with: viewSize,
+                                            options: [.usesLineFragmentOrigin],
+                                            context: nil).height
             }
         }
         

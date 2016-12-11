@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D7CF7DF2C95B236BE20E0F2A5A25785A"
+               BlueprintIdentifier = "16AFDC7992E723C47D1BF43207CDA5BA"
                BuildableName = "Pods_Weibo.framework"
                BlueprintName = "Pods-Weibo"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D7CF7DF2C95B236BE20E0F2A5A25785A"
+            BlueprintIdentifier = "16AFDC7992E723C47D1BF43207CDA5BA"
             BuildableName = "Pods_Weibo.framework"
             BlueprintName = "Pods-Weibo"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -10,6 +10,7 @@ pod "SDWebImage"
 pod "FMDB"
 pod "SVProgressHUD"
 pod "pop"
+pod "HMEmoticon"
 
 end
 
