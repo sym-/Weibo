@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1848CB1DFE7C3700D5810E /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1848CA1DFE7C3700D5810E /* FFLabel.swift */; };
+		1F1848CD1DFE865400D5810E /* WBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1848CC1DFE865400D5810E /* WBWebViewController.swift */; };
 		1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */; };
 		1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1F2F606A1DF68E0D000464F1 /* YMRefresh.bundle */; };
 		1F2F606E1DF68E0D000464F1 /* YMRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F606B1DF68E0D000464F1 /* YMRefreshView.swift */; };
@@ -165,6 +167,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F1848CA1DFE7C3700D5810E /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
+		1F1848CC1DFE865400D5810E /* WBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWebViewController.swift; sourceTree = "<group>"; };
 		1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshControl.swift; sourceTree = "<group>"; };
 		1F2F606A1DF68E0D000464F1 /* YMRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YMRefresh.bundle; sourceTree = "<group>"; };
 		1F2F606B1DF68E0D000464F1 /* YMRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshView.swift; sourceTree = "<group>"; };
@@ -447,6 +451,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1F1848C61DFE7B5700D5810E /* FFLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1F1848CA1DFE7C3700D5810E /* FFLabel.swift */,
+			);
+			path = FFLabel;
+			sourceTree = "<group>";
+		};
 		1F2F603C1DF3F276000464F1 /* YMRefreshControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +632,7 @@
 		1FCA44091DD4BF2700F65575 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F1848C61DFE7B5700D5810E /* FFLabel */,
 				1FB528041DFD4ADA00E8306D /* Emoticon */,
 				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
 				1FEFC9FA1DE188A600A18272 /* Network */,
@@ -656,6 +669,7 @@
 			children = (
 				1F8905151DED82FC0009A8B9 /* StatusCell */,
 				1FCA44171DD4C02A00F65575 /* WBHomeViewController.swift */,
+				1F1848CC1DFE865400D5810E /* WBWebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1188,6 +1202,7 @@
 				1F4FBB661DDAE3860090DFE9 /* UIButton+Convenience.swift in Sources */,
 				1FCA45001DD4C3B300F65575 /* YYClassInfo.m in Sources */,
 				1FEFC9EE1DDB1CEB00A18272 /* WBDemoViewController.swift in Sources */,
+				1F1848CD1DFE865400D5810E /* WBWebViewController.swift in Sources */,
 				1FCA44DC1DD4C3B200F65575 /* NSThread+YYAdd.m in Sources */,
 				1FCA44ED1DD4C3B200F65575 /* UIView+YYAdd.m in Sources */,
 				1FCA44E91DD4C3B200F65575 /* UIScreen+YYAdd.m in Sources */,
@@ -1244,6 +1259,7 @@
 				1FCA44D31DD4C3B200F65575 /* NSDate+YYAdd.m in Sources */,
 				1FCA44E01DD4C3B200F65575 /* UIApplication+YYAdd.m in Sources */,
 				1FCA44DA1DD4C3B200F65575 /* NSObject+YYAddForKVO.m in Sources */,
+				1F1848CB1DFE7C3700D5810E /* FFLabel.swift in Sources */,
 				1F8905231DEED9660009A8B9 /* WBStatusPictureView.swift in Sources */,
 				1FCA45061DD4C3B300F65575 /* YYTextLayout.m in Sources */,
 				1FCA44FA1DD4C3B300F65575 /* YYImageCache.m in Sources */,

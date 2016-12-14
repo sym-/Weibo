@@ -88,6 +88,8 @@ extension WBHomeViewController{
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! WBStatusCell
         cell.viewModel = viewModel
         
+        cell.delegate = self
+        
         return cell
     }
     
@@ -95,5 +97,13 @@ extension WBHomeViewController{
         let viewModel = listViewModel.statusList[indexPath.row]
         
         return viewModel.rowHeight
+    }
+}
+
+extension WBHomeViewController: WBStatusCellDelegate{
+    func statusCellDidSelectedUrlString(cell: WBStatusCell, urlString: String) {
+        let webVC = WBWebViewController()
+        webVC.urlString = urlString
+        navigationController?.pushViewController(webVC, animated: true)
     }
 }

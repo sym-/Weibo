@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// 单条微博视图模型 
 //FIXME:了解CustomStringConvertible
@@ -52,6 +53,7 @@ class WBStatusViewModel:CustomStringConvertible {
     
     init(model: WBStatus) {
         self.status = model
+        
         //common_icon_membership_level1
         //会员 0-6
         let mbrank = model.user?.mbrank ?? 0
@@ -60,34 +62,39 @@ class WBStatusViewModel:CustomStringConvertible {
             
             memberIcon = UIImage(named: imageName)
         }
-        
+
         switch model.user?.verified_type ?? -1 {
-        case 0:
-            vipIcon = UIImage(named: "avatar_vip")
-        case 2,3,4:
-            vipIcon = UIImage(named: "avatar_enterprise_vip")
-        case 220:
-            vipIcon = UIImage(named: "avatar_grassroot")
-        default:
-            break
+            case 0:
+                vipIcon = UIImage(named: "avatar_vip")
+            case 2,3,4:
+                vipIcon = UIImage(named: "avatar_enterprise_vip")
+            case 220:
+                vipIcon = UIImage(named: "avatar_grassroot")
+            default:
+                break
             
         }
-        
+
         retweetedStr = countString(count: model.reposts_count, defaultString: "转发")
         commentStr = countString(count: model.comments_count, defaultString: "转发")
         likeStr = countString(count: model.attitudes_count, defaultString: "转发")
-        
+
         pictureViewSize = calcPictureViewSize(count: picURLs?.count)
+
+        let originFont: UIFont = UIFont.systemFont(ofSize: 15)
+        let retweetedFont: UIFont = UIFont.systemFont(ofSize: 14)
         
-        let originFont = UIFont.systemFont(ofSize: 15)
-        let retweetedFont = UIFont.systemFont(ofSize: 14)
         //微博文本属性文本
         statusAttrText = YMEmoticonManager.shared.emoticonString(string: model.text ?? "", font: originFont)
-        
         //被转发文本属性文本
-        let rText = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
-            + ":"
-            + "\(status.retweeted_status?.text ?? "")"
+        var rText: String = "@"
+        rText.append(status.retweeted_status?.user?.screen_name ?? "")
+        rText.append(":")
+        rText.append(status.retweeted_status?.text ?? "")
+        
+//        let rText: String = "@" + "\(status.retweeted_status?.user?.screen_name ?? "")"
+//            + ":"
+//            + "\(status.retweeted_status?.text ?? "")"
         
         retweedtedAttrText = YMEmoticonManager.shared.emoticonString(string: rText, font: retweetedFont)
 

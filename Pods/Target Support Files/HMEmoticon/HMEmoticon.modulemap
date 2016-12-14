@@ -1,6 +1,0 @@
-framework module HMEmoticon {
-  umbrella header "HMEmoticon-umbrella.h"
-
-  export *
-  module * { export * }
-}
