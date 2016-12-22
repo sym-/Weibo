@@ -37,6 +37,22 @@ extension UIImage {
     }
     
     
-    
+    func ym_redrawImage(backColor: UIColor = UIColor.white) -> UIImage? {
+        let size = self.size
+        
+        let rect = CGRect(origin: CGPoint.zero, size: size )
+        UIGraphicsBeginImageContextWithOptions(rect.size, true, 0.0)
+        
+        draw(in: rect)
+        
+        let rectPath = UIBezierPath(rect: rect)
+        backColor.setFill()
+        rectPath.fill()
+        
+        let result = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return result
+    }
     
 }

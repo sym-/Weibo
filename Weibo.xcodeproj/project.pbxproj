@@ -25,6 +25,7 @@
 		1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */; };
 		1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */; };
 		1F4FBB661DDAE3860090DFE9 /* UIButton+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */; };
+		1F7C74F21E00FAB3009379D3 /* WBComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F7C74F11E00FAB3009379D3 /* WBComposeViewController.xib */; };
 		1F8904F61DE734BF0009A8B9 /* WeiBoCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8904F51DE734BF0009A8B9 /* WeiBoCommon.swift */; };
 		1F8904F91DE736AA0009A8B9 /* WBOAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8904F81DE736AA0009A8B9 /* WBOAuthViewController.swift */; };
 		1F8904FB1DE736E30009A8B9 /* WBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8904FA1DE736E30009A8B9 /* WBVisitorView.swift */; };
@@ -46,9 +47,17 @@
 		1F8905211DEEC28A0009A8B9 /* WBStatusToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905201DEEC28A0009A8B9 /* WBStatusToolBar.swift */; };
 		1F8905231DEED9660009A8B9 /* WBStatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905221DEED9660009A8B9 /* WBStatusPictureView.swift */; };
 		1F8905251DEEDEBB0009A8B9 /* WBStatusPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8905241DEEDEBB0009A8B9 /* WBStatusPicture.swift */; };
-		1FB528091DFD4ADA00E8306D /* YMEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */; };
-		1FB5280A1DFD4ADA00E8306D /* YMEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */; };
-		1FB5280B1DFD4ADA00E8306D /* YMEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */; };
+		1F995AC41E0B8075004855A7 /* YMEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995AB91E0B8075004855A7 /* YMEmoticon.swift */; };
+		1F995AC51E0B8075004855A7 /* YMEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995ABA1E0B8075004855A7 /* YMEmoticonAttachment.swift */; };
+		1F995AC61E0B8075004855A7 /* YMEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995ABB1E0B8075004855A7 /* YMEmoticonPackage.swift */; };
+		1F995AC71E0B8075004855A7 /* YMEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995ABD1E0B8075004855A7 /* YMEmoticonCell.swift */; };
+		1F995AC81E0B8075004855A7 /* YMEmoticonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F995ABE1E0B8075004855A7 /* YMEmoticonCell.xib */; };
+		1F995AC91E0B8075004855A7 /* YMEmoticonInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995ABF1E0B8075004855A7 /* YMEmoticonInputView.swift */; };
+		1F995ACA1E0B8075004855A7 /* YMEmoticonInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F995AC01E0B8075004855A7 /* YMEmoticonInputView.xib */; };
+		1F995ACB1E0B8075004855A7 /* YMEmoticonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995AC11E0B8075004855A7 /* YMEmoticonLayout.swift */; };
+		1F995ACC1E0B8075004855A7 /* YMEmoticonToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995AC21E0B8075004855A7 /* YMEmoticonToolbar.swift */; };
+		1F995ACD1E0B8075004855A7 /* YMEmoticonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F995AC31E0B8075004855A7 /* YMEmoticonManager.swift */; };
+		1F9BD5B81E029C4300D6EF8A /* WBComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BD5B71E029C4300D6EF8A /* WBComposeTextView.swift */; };
 		1FC759C11DD4B5280064320D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC759C01DD4B5280064320D /* AppDelegate.swift */; };
 		1FC759C81DD4B5280064320D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FC759C71DD4B5280064320D /* Assets.xcassets */; };
 		1FCA44041DD4BA7400F65575 /* ad_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FCA44031DD4BA7400F65575 /* ad_background@2x.png */; };
@@ -186,6 +195,7 @@
 		1F4FBB5F1DDAB3D70090DFE9 /* UIButton+SetUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+SetUp.m"; sourceTree = "<group>"; };
 		1F4FBB631DDAB82E0090DFE9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		1F4FBB651DDAE3860090DFE9 /* UIButton+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Convenience.swift"; sourceTree = "<group>"; };
+		1F7C74F11E00FAB3009379D3 /* WBComposeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WBComposeViewController.xib; sourceTree = "<group>"; };
 		1F8904F51DE734BF0009A8B9 /* WeiBoCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeiBoCommon.swift; sourceTree = "<group>"; };
 		1F8904F81DE736AA0009A8B9 /* WBOAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBOAuthViewController.swift; sourceTree = "<group>"; };
 		1F8904FA1DE736E30009A8B9 /* WBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBVisitorView.swift; sourceTree = "<group>"; };
@@ -208,9 +218,17 @@
 		1F8905201DEEC28A0009A8B9 /* WBStatusToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusToolBar.swift; sourceTree = "<group>"; };
 		1F8905221DEED9660009A8B9 /* WBStatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPictureView.swift; sourceTree = "<group>"; };
 		1F8905241DEEDEBB0009A8B9 /* WBStatusPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBStatusPicture.swift; sourceTree = "<group>"; };
-		1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticon.swift; sourceTree = "<group>"; };
-		1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonPackage.swift; sourceTree = "<group>"; };
-		1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonManager.swift; sourceTree = "<group>"; };
+		1F995AB91E0B8075004855A7 /* YMEmoticon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticon.swift; sourceTree = "<group>"; };
+		1F995ABA1E0B8075004855A7 /* YMEmoticonAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonAttachment.swift; sourceTree = "<group>"; };
+		1F995ABB1E0B8075004855A7 /* YMEmoticonPackage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonPackage.swift; sourceTree = "<group>"; };
+		1F995ABD1E0B8075004855A7 /* YMEmoticonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonCell.swift; sourceTree = "<group>"; };
+		1F995ABE1E0B8075004855A7 /* YMEmoticonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMEmoticonCell.xib; sourceTree = "<group>"; };
+		1F995ABF1E0B8075004855A7 /* YMEmoticonInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonInputView.swift; sourceTree = "<group>"; };
+		1F995AC01E0B8075004855A7 /* YMEmoticonInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMEmoticonInputView.xib; sourceTree = "<group>"; };
+		1F995AC11E0B8075004855A7 /* YMEmoticonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonLayout.swift; sourceTree = "<group>"; };
+		1F995AC21E0B8075004855A7 /* YMEmoticonToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonToolbar.swift; sourceTree = "<group>"; };
+		1F995AC31E0B8075004855A7 /* YMEmoticonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMEmoticonManager.swift; sourceTree = "<group>"; };
+		1F9BD5B71E029C4300D6EF8A /* WBComposeTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBComposeTextView.swift; sourceTree = "<group>"; };
 		1FC759BD1DD4B5280064320D /* Weibo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weibo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FC759C01DD4B5280064320D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FC759C71DD4B5280064320D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -475,8 +493,10 @@
 		1F2F63AE1DF6B795000464F1 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				1F9BD5B61E029C2500D6EF8A /* View */,
 				1F2F63AF1DF6B795000464F1 /* ComposeType */,
 				1F460E9E1DF90F0F000E8150 /* WBComposeViewController.swift */,
+				1F7C74F11E00FAB3009379D3 /* WBComposeViewController.xib */,
 			);
 			path = Compose;
 			sourceTree = "<group>";
@@ -555,22 +575,45 @@
 			path = StatusCell;
 			sourceTree = "<group>";
 		};
-		1FB528041DFD4ADA00E8306D /* Emoticon */ = {
+		1F995AB71E0B8075004855A7 /* Emoticon */ = {
 			isa = PBXGroup;
 			children = (
-				1FB528051DFD4ADA00E8306D /* Model */,
-				1FB528081DFD4ADA00E8306D /* YMEmoticonManager.swift */,
+				1F995AB81E0B8075004855A7 /* Model */,
+				1F995ABC1E0B8075004855A7 /* View */,
+				1F995AC31E0B8075004855A7 /* YMEmoticonManager.swift */,
 			);
 			path = Emoticon;
 			sourceTree = "<group>";
 		};
-		1FB528051DFD4ADA00E8306D /* Model */ = {
+		1F995AB81E0B8075004855A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1FB528061DFD4ADA00E8306D /* YMEmoticon.swift */,
-				1FB528071DFD4ADA00E8306D /* YMEmoticonPackage.swift */,
+				1F995AB91E0B8075004855A7 /* YMEmoticon.swift */,
+				1F995ABA1E0B8075004855A7 /* YMEmoticonAttachment.swift */,
+				1F995ABB1E0B8075004855A7 /* YMEmoticonPackage.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1F995ABC1E0B8075004855A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F995ABD1E0B8075004855A7 /* YMEmoticonCell.swift */,
+				1F995ABE1E0B8075004855A7 /* YMEmoticonCell.xib */,
+				1F995ABF1E0B8075004855A7 /* YMEmoticonInputView.swift */,
+				1F995AC01E0B8075004855A7 /* YMEmoticonInputView.xib */,
+				1F995AC11E0B8075004855A7 /* YMEmoticonLayout.swift */,
+				1F995AC21E0B8075004855A7 /* YMEmoticonToolbar.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1F9BD5B61E029C2500D6EF8A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F9BD5B71E029C4300D6EF8A /* WBComposeTextView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1FC759B41DD4B5280064320D = {
@@ -632,8 +675,8 @@
 		1FCA44091DD4BF2700F65575 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1F995AB71E0B8075004855A7 /* Emoticon */,
 				1F1848C61DFE7B5700D5810E /* FFLabel */,
-				1FB528041DFD4ADA00E8306D /* Emoticon */,
 				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
 				1FEFC9FA1DE188A600A18272 /* Network */,
 				1F4FBB611DDAB8010090DFE9 /* Additions */,
@@ -1105,12 +1148,15 @@
 			files = (
 				1F4605C41DF11B97000B5405 /* WBStatusRetweetedCell.xib in Resources */,
 				1FCA44061DD4BCED00F65575 /* LaunchScreen.xib in Resources */,
+				1F995AC81E0B8075004855A7 /* YMEmoticonCell.xib in Resources */,
 				1F8905121DEC77C50009A8B9 /* WBNewFeatureView.xib in Resources */,
 				1F8905101DEC12A60009A8B9 /* WBWelcomeView.xib in Resources */,
 				1FCA44041DD4BA7400F65575 /* ad_background@2x.png in Resources */,
 				1F8905191DED833F0009A8B9 /* WBStatusNormalCell.xib in Resources */,
+				1F995ACA1E0B8075004855A7 /* YMEmoticonInputView.xib in Resources */,
 				1F2F606F1DF68E0D000464F1 /* YMRefreshView.xib in Resources */,
 				1FEFC9F91DDF187B00A18272 /* main.json in Resources */,
+				1F7C74F21E00FAB3009379D3 /* WBComposeViewController.xib in Resources */,
 				1F2F63B71DF6C970000464F1 /* WBComposeTypeButton.xib in Resources */,
 				1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */,
 				1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */,
@@ -1175,6 +1221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F2F61B21DF6AAE3000464F1 /* YMDianPingRefreshView.swift in Sources */,
+				1F995AC71E0B8075004855A7 /* YMEmoticonCell.swift in Sources */,
 				1F8905021DE821B10009A8B9 /* WBBaseObject.swift in Sources */,
 				1FCA44D11DD4C3B200F65575 /* NSBundle+YYAdd.m in Sources */,
 				1FCA44161DD4BFCE00F65575 /* WBBaseViewController.swift in Sources */,
@@ -1204,6 +1251,7 @@
 				1FEFC9EE1DDB1CEB00A18272 /* WBDemoViewController.swift in Sources */,
 				1F1848CD1DFE865400D5810E /* WBWebViewController.swift in Sources */,
 				1FCA44DC1DD4C3B200F65575 /* NSThread+YYAdd.m in Sources */,
+				1F995ACD1E0B8075004855A7 /* YMEmoticonManager.swift in Sources */,
 				1FCA44ED1DD4C3B200F65575 /* UIView+YYAdd.m in Sources */,
 				1FCA44E91DD4C3B200F65575 /* UIScreen+YYAdd.m in Sources */,
 				1FCA44EC1DD4C3B200F65575 /* UITextField+YYAdd.m in Sources */,
@@ -1217,6 +1265,7 @@
 				1FCA450D1DD4C3B300F65575 /* YYTextArchiver.m in Sources */,
 				1F8905211DEEC28A0009A8B9 /* WBStatusToolBar.swift in Sources */,
 				1F4FBB641DDAB82E0090DFE9 /* Bundle+Extension.swift in Sources */,
+				1F995AC51E0B8075004855A7 /* YMEmoticonAttachment.swift in Sources */,
 				1FCA44E21DD4C3B200F65575 /* UIBezierPath+YYAdd.m in Sources */,
 				1FCA44F61DD4C3B200F65575 /* UIImageView+YYWebImage.m in Sources */,
 				1F4FBB601DDAB3D70090DFE9 /* UIButton+SetUp.m in Sources */,
@@ -1227,7 +1276,6 @@
 				1F8905091DEBE0A20009A8B9 /* UIButton+TTEnlargeEdge.m in Sources */,
 				1FCA44F11DD4C3B200F65575 /* YYMemoryCache.m in Sources */,
 				1FEFC9F01DDC408100A18272 /* UIBarButtonItem+Extension.swift in Sources */,
-				1FB528091DFD4ADA00E8306D /* YMEmoticon.swift in Sources */,
 				1F2F63B51DF6C95E000464F1 /* WBComposeTypeButton.swift in Sources */,
 				1FCA44D91DD4C3B200F65575 /* NSObject+YYAddForARC.m in Sources */,
 				1FCA45191DD4C3B300F65575 /* YYKeychain.m in Sources */,
@@ -1241,21 +1289,21 @@
 				1F8905041DE8388F0009A8B9 /* NSString+Extension.swift in Sources */,
 				1FCA45181DD4C3B300F65575 /* YYGestureRecognizer.m in Sources */,
 				1FCA450F1DD4C3B300F65575 /* YYTextParser.m in Sources */,
-				1FB5280A1DFD4ADA00E8306D /* YMEmoticonPackage.swift in Sources */,
 				1FCA44D41DD4C3B200F65575 /* NSDictionary+YYAdd.m in Sources */,
 				1FCA45011DD4C3B300F65575 /* YYTextContainerView.m in Sources */,
 				1FCA450E1DD4C3B300F65575 /* YYTextAttribute.m in Sources */,
 				1FCA44F01DD4C3B200F65575 /* YYKVStorage.m in Sources */,
 				1FCA45021DD4C3B300F65575 /* YYTextDebugOption.m in Sources */,
-				1FB5280B1DFD4ADA00E8306D /* YMEmoticonManager.swift in Sources */,
 				1FEFC9FE1DE2FD3100A18272 /* WBNetworkManager+Extension.swift in Sources */,
 				1FEFC9F71DDDC2F900A18272 /* UILabel+Extension.swift in Sources */,
+				1F995AC91E0B8075004855A7 /* YMEmoticonInputView.swift in Sources */,
 				1FCA44FD1DD4C3B300F65575 /* YYWebImageManager.m in Sources */,
 				1FCA45031DD4C3B300F65575 /* YYTextEffectWindow.m in Sources */,
 				1FCA44E71DD4C3B200F65575 /* UIGestureRecognizer+YYAdd.m in Sources */,
 				1FCA44FB1DD4C3B300F65575 /* YYImageCoder.m in Sources */,
 				1FCA44E51DD4C3B200F65575 /* UIDevice+YYAdd.m in Sources */,
 				1FCA44E81DD4C3B200F65575 /* UIImage+YYAdd.m in Sources */,
+				1F995AC41E0B8075004855A7 /* YMEmoticon.swift in Sources */,
 				1FCA44D31DD4C3B200F65575 /* NSDate+YYAdd.m in Sources */,
 				1FCA44E01DD4C3B200F65575 /* UIApplication+YYAdd.m in Sources */,
 				1FCA44DA1DD4C3B200F65575 /* NSObject+YYAddForKVO.m in Sources */,
@@ -1283,11 +1331,14 @@
 				1FCA44F51DD4C3B200F65575 /* UIButton+YYWebImage.m in Sources */,
 				1FCA44F21DD4C3B200F65575 /* _YYWebImageSetter.m in Sources */,
 				1FCA45201DD4C3B300F65575 /* YYWeakProxy.m in Sources */,
+				1F995AC61E0B8075004855A7 /* YMEmoticonPackage.swift in Sources */,
 				1FCA44181DD4C02A00F65575 /* WBHomeViewController.swift in Sources */,
 				1FCA451E1DD4C3B300F65575 /* YYTimer.m in Sources */,
 				1FCA45121DD4C3B300F65575 /* YYTextUtilities.m in Sources */,
 				1FCA44E61DD4C3B200F65575 /* UIFont+YYAdd.m in Sources */,
+				1F995ACB1E0B8075004855A7 /* YMEmoticonLayout.swift in Sources */,
 				1FCA45101DD4C3B300F65575 /* YYTextRubyAnnotation.m in Sources */,
+				1F995ACC1E0B8075004855A7 /* YMEmoticonToolbar.swift in Sources */,
 				1FCA44FF1DD4C3B300F65575 /* NSObject+YYModel.m in Sources */,
 				1F89051D1DEDCB520009A8B9 /* WBStatusViewModel.swift in Sources */,
 				1F8905141DED61410009A8B9 /* UIImage+Extension.swift in Sources */,
@@ -1295,6 +1346,7 @@
 				1FC759C11DD4B5280064320D /* AppDelegate.swift in Sources */,
 				1FCA451B1DD4C3B300F65575 /* YYSentinel.m in Sources */,
 				1FCA44141DD4BFAE00F65575 /* WBNavigationController.swift in Sources */,
+				1F9BD5B81E029C4300D6EF8A /* WBComposeTextView.swift in Sources */,
 				1FCA45141DD4C3B300F65575 /* YYTextView.m in Sources */,
 				1FEFCA251DE4466800A18272 /* WBStatus.swift in Sources */,
 				1FCA44F31DD4C3B200F65575 /* CALayer+YYWebImage.m in Sources */,

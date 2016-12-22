@@ -15,6 +15,16 @@ class YMEmoticonManager{
     /// 表情包懒加载数组
     lazy var packages = [YMEmoticonPackage]()
     
+    lazy var bundle: Bundle? = {
+        let bundlePath = Bundle.main.bundlePath
+        let emoctionPath = bundlePath + "/Frameworks/HMEmoticon.framework/HMEmoticon.bundle"
+        if let emoctionBundle = Bundle(path: emoctionPath){
+            return emoctionBundle
+        }
+        
+        return nil
+    }()
+    
     /// 构造函数，如果添加private修饰符，就要求调用者必须通过shared访问对象
     private init(){
         loadPackages()

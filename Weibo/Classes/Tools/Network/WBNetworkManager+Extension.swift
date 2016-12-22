@@ -101,3 +101,36 @@ extension WBNetworkManager{
         
     }
 }
+
+//发布微博
+extension WBNetworkManager{
+    
+    /// 发布微博
+    ///
+    /// - Parameters:
+    ///   - status: 微博文本
+    ///   - image: 微博配图(可以为nil,为纯文本微博)
+    ///   - completion: 完成回调
+    func poseStatus(status: String, image: UIImage?, completion: @escaping (_ json: [String: AnyObject]?, _ isSuccess: Bool)->()) {
+        let urlString: String
+        var name: String?
+        var data: Data?
+        
+        if let image = image {
+            urlString = "https://upload.api.weibo.com/2/statuses/upload.json"
+            name = "pic"
+            data = UIImagePNGRepresentation(image)
+        }
+        else{
+            urlString = "https://api.weibo.com/2/statuses/update.json"
+        }
+        
+        let params = ["status": status]
+        
+        
+        tokenRequest(method: .POST, urlString: urlString, parameters: params, name: name, data: data) { (json, success) in
+            completion((json as? [String: AnyObject]), success)
+        }
+
+    }
+}

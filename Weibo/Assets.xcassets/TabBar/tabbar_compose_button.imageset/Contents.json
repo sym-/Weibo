@@ -5,6 +5,17 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "stretch",
+          "width" : 24
+        },
+        "cap-insets" : {
+          "right" : 26,
+          "left" : 26
+        }
+      },
       "idiom" : "universal",
       "filename" : "tabbar_compose_button@2x.png",
       "scale" : "2x"
