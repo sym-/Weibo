@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F0906241E1CD742004597E7 /* status.sql in Resources */ = {isa = PBXBuildFile; fileRef = 1F0906221E1CD742004597E7 /* status.sql */; };
+		1F0906251E1CD742004597E7 /* YMSQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0906231E1CD742004597E7 /* YMSQLiteManager.swift */; };
 		1F1848CB1DFE7C3700D5810E /* FFLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1848CA1DFE7C3700D5810E /* FFLabel.swift */; };
 		1F1848CD1DFE865400D5810E /* WBWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1848CC1DFE865400D5810E /* WBWebViewController.swift */; };
 		1F2F603E1DF3F2A5000464F1 /* YMRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */; };
@@ -176,6 +178,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F0906221E1CD742004597E7 /* status.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = status.sql; sourceTree = "<group>"; };
+		1F0906231E1CD742004597E7 /* YMSQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMSQLiteManager.swift; sourceTree = "<group>"; };
 		1F1848CA1DFE7C3700D5810E /* FFLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FFLabel.swift; sourceTree = "<group>"; };
 		1F1848CC1DFE865400D5810E /* WBWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBWebViewController.swift; sourceTree = "<group>"; };
 		1F2F603D1DF3F2A5000464F1 /* YMRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YMRefreshControl.swift; sourceTree = "<group>"; };
@@ -469,6 +473,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1F0906201E1CD703004597E7 /* UI框架 */ = {
+			isa = PBXGroup;
+			children = (
+				1F995AB71E0B8075004855A7 /* Emoticon */,
+				1F1848C61DFE7B5700D5810E /* FFLabel */,
+				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
+			);
+			name = "UI框架";
+			sourceTree = "<group>";
+		};
+		1F0906211E1CD742004597E7 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				1F0906221E1CD742004597E7 /* status.sql */,
+				1F0906231E1CD742004597E7 /* YMSQLiteManager.swift */,
+			);
+			path = SQLite;
+			sourceTree = "<group>";
+		};
 		1F1848C61DFE7B5700D5810E /* FFLabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,9 +698,8 @@
 		1FCA44091DD4BF2700F65575 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				1F995AB71E0B8075004855A7 /* Emoticon */,
-				1F1848C61DFE7B5700D5810E /* FFLabel */,
-				1F2F603C1DF3F276000464F1 /* YMRefreshControl */,
+				1F0906211E1CD742004597E7 /* SQLite */,
+				1F0906201E1CD703004597E7 /* UI框架 */,
 				1FEFC9FA1DE188A600A18272 /* Network */,
 				1F4FBB611DDAB8010090DFE9 /* Additions */,
 				1F4FBB621DDAB8010090DFE9 /* Extensions */,
@@ -1159,6 +1181,7 @@
 				1F7C74F21E00FAB3009379D3 /* WBComposeViewController.xib in Resources */,
 				1F2F63B71DF6C970000464F1 /* WBComposeTypeButton.xib in Resources */,
 				1F2F606D1DF68E0D000464F1 /* YMRefresh.bundle in Resources */,
+				1F0906241E1CD742004597E7 /* status.sql in Resources */,
 				1F2F61B31DF6AAE3000464F1 /* YMDianPingRefreshView.xib in Resources */,
 				1F2F63B31DF6BB6A000464F1 /* WBComposeTypeView.xib in Resources */,
 				1FC759C81DD4B5280064320D /* Assets.xcassets in Resources */,
@@ -1343,6 +1366,7 @@
 				1F89051D1DEDCB520009A8B9 /* WBStatusViewModel.swift in Sources */,
 				1F8905141DED61410009A8B9 /* UIImage+Extension.swift in Sources */,
 				1FCA45111DD4C3B300F65575 /* YYTextRunDelegate.m in Sources */,
+				1F0906251E1CD742004597E7 /* YMSQLiteManager.swift in Sources */,
 				1FC759C11DD4B5280064320D /* AppDelegate.swift in Sources */,
 				1FCA451B1DD4C3B300F65575 /* YYSentinel.m in Sources */,
 				1FCA44141DD4BFAE00F65575 /* WBNavigationController.swift in Sources */,
